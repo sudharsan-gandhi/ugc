@@ -7,6 +7,8 @@
 
 module.exports = {
 	'new':function(req,res){
+		req.session.authenticated="false";
+		console.log(req.session);
 		res.view();
 	},
 
@@ -32,6 +34,7 @@ module.exports = {
 				 // sails.log(user.password);
 				 if(user[0].password==req.param('password')){
 					console.log('in');
+					req.session.authenticated=true;
 					res.redirect('/user/show/'+user[0].id);
 				}else
 					res.redirect('/');
