@@ -1,1 +1,5 @@
-<%= user.id %>
+
+<form action="/profile/new" method="POST">
+ <input type="hidden" value="<%=user.id%>" name="owner">
+ <input type="submit" value="Update"/>
+</form>

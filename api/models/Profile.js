@@ -45,7 +45,7 @@ module.exports = {
 		},
 		college_account_number: {
 			type: 'string',
-			numeric:true
+			numeric:true,
 			required: true
 
 		},
@@ -55,7 +55,7 @@ module.exports = {
 		},
 		undertaking_college_name: {
 			type: 'string',
-			required: 'true'
+			required: true
 		},
 		papers_published:{
 			type:'integer',

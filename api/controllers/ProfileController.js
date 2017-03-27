@@ -6,23 +6,18 @@
  */
 
 module.exports = {
-	'new':function(req,res,err){
-		User.findOne(req,param('owner'),function foundUser(err,user){
-			if(err) return next (err);
-			if(!user) return next();
-
+	'new':function(req,res){
+		req.session.authenticated="false";
+		console.log(req.session);
 		
-		res.view({
-			user:user
-		});
-
-	});
+		
+		res.view();
 	},
 
 	create:function(req,res,next){
 			User.create(req.params.all(),function customerCreated(err,user){
 				if (err) return next(err)
-					res.redirect('/user/show/'+user.id);
+					res.redirect('/user/login'+user.id);
 		});
 	},
 };

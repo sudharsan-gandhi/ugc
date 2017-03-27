@@ -10,42 +10,42 @@ module.exports = {
   attributes: {
   	firstname:{
   		type:'string',
-  		required:'true'
+  		required:true
   	},
   	lastname:{
   		type:'string',
-  		required:'true'
+  		required:true
   	},
   	middlename:{
   		type:'string'
   	},
   	gender:{
   		type:'string',
-  		required:'true'
+  		required:true
   	},
   	date_of_birth:{
   		type:'datetime',
-  		required:'true'
+  		required:true
   	},
   	email:{
   		type:'string',
-  		email:'true',
-  		required:'true',
-  		unique:'true'
+  		email:true,
+  		required:true,
+  		unique:true
   	},
   	password:{
   		type:'string',
-  		required:'true'
+  		required:true
   	},
   	contact_no:{
   		type:'integer',
-  		required:'true',
-  		unique:'true'
+  		required:true,
+  		unique:true
   	},
   	aadhar_number:{
   		type:'string',
-  		numeric:'true',
-  		required:'true',
+  		numeric:true,
+  		required:true,
   		minLength: 12,
   		maxLength: 12
   	},
@@ -55,26 +55,31 @@ module.exports = {
   	},
   	state:{
         type:'string',
-        required:'true'
+        required:true
   	},
   	pincode:{
   		type:'integer',
-  		required:'true'
+  		required:true
   	},
   	college_name:{
   		type:'string',
-  		required:'true'
+  		required:true
   	},
     college_email:{
     	type:'string',
-    	email:'true',
-    	required:'true'
+    	email:true,
+    	required:true
     },
     college_phone_no:{
     	type:'integer',
-    	required:'true'
+    	required:true
     }
   },
+    
+    profiles:{
+      collection:'profile',
+      via:'owner'
+    },
     beforeCreate:function(values,next){
       console.log('inside beforeCreate');
       require('bcrypt').hash(values.password,10,function passwordEncrypted(err,encryptedPassword){

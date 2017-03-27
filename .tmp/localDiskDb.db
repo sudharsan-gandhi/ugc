@@ -1,0 +1,160 @@
+{
+  "data": {
+    "profile": [],
+    "proposal": [],
+    "user": []
+  },
+  "schema": {
+    "profile": {
+      "qualification": {
+        "type": "string"
+      },
+      "area_of_specialization": {
+        "type": "string"
+      },
+      "designation": {
+        "type": "string"
+      },
+      "teaching_experience": {
+        "type": "integer"
+      },
+      "research_experience": {
+        "type": "integer"
+      },
+      "doctrate_degree_year": {
+        "type": "integer"
+      },
+      "doctrate_degree_title": {
+        "type": "string"
+      },
+      "retired": {
+        "type": "boolean"
+      },
+      "college_account_number": {
+        "type": "string"
+      },
+      "college_approval_status": {
+        "type": "boolean"
+      },
+      "undertaking_college_name": {
+        "type": "string"
+      },
+      "papers_published": {
+        "type": "integer"
+      },
+      "papers_accepted": {
+        "type": "integer"
+      },
+      "papers_communicated": {
+        "type": "integer"
+      },
+      "book_published": {
+        "type": "integer"
+      },
+      "book_accepted": {
+        "type": "integer"
+      },
+      "book_communicated": {
+        "type": "integer"
+      },
+      "owner": {
+        "type": "integer",
+        "model": "profile",
+        "foreignKey": true,
+        "alias": "owner"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "proposal": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "user": {
+      "firstname": {
+        "type": "string"
+      },
+      "lastname": {
+        "type": "string"
+      },
+      "middlename": {
+        "type": "string"
+      },
+      "gender": {
+        "type": "string"
+      },
+      "date_of_birth": {
+        "type": "datetime"
+      },
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "password": {
+        "type": "string"
+      },
+      "contact_no": {
+        "type": "integer",
+        "unique": true
+      },
+      "aadhar_number": {
+        "type": "string"
+      },
+      "city": {
+        "type": "string"
+      },
+      "state": {
+        "type": "string"
+      },
+      "pincode": {
+        "type": "integer"
+      },
+      "college_name": {
+        "type": "string"
+      },
+      "college_email": {
+        "type": "string"
+      },
+      "college_phone_no": {
+        "type": "integer"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "profile": {},
+    "user": {},
+    "proposal": {}
+  }
+}
