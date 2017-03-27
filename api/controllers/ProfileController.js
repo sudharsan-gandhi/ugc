@@ -9,15 +9,21 @@ module.exports = {
 	'new':function(req,res){
 		req.session.authenticated="false";
 		console.log(req.session);
+		User.findOne(1).exec(function foundUser(err,user){
+			if(err) res.redirect('/');
+			res.view({
+			user:user
+		});
+		});
 		
 		
-		res.view();
 	},
 
 	create:function(req,res,next){
-			User.create(req.params.all(),function customerCreated(err,user){
+			Profile.create(req.params.all(),function customerCreated(err,profile){
 				if (err) return next(err)
-					res.redirect('/user/login'+user.id);
+					
+				res.redirect('/user/show'+ profile.owner);
 		});
 	},
 };

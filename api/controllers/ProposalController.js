@@ -25,6 +25,10 @@ module.exports = {
 			type:'integer',
 			min:0,
 			required:true
+		},
+		owner:{
+			model:'propo',
+			required:true
 		}
 
 	}

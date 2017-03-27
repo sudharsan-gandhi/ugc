@@ -23,6 +23,7 @@
 <body>
     <div class="container">
 <form class="form-horizontal" action="/profile/create" method="POST">
+ <input type="hidden" name="owner" value="<%- user.id%>" />
  
 <fieldset>
 
@@ -31,9 +32,9 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label  for="Area_of_specification">Area of specification: </label>  
+  <label  for="Area_of_specialization">Area of specialization: </label>  
   
-  <input id="Area_of_specification" name="Area_of_specification" type="text" placeholder="Field of work" class="form-control" >
+  <input id="Area_of_specialization" name="Area_of_specialization" type="text" placeholder="Field of work" class="form-control" >
     
  
 </div>
@@ -54,8 +55,8 @@
     
   </div>
 </div>
-<div class="form-group">
-  <label  for="undertaking_college_name">Name of the institution where the project will under take:  </label>  
+<!--<div class="form-group">
+  <label  for="undertaking_college_name">Name of the institution where the project will be undertaken:  </label>  
   <div class=" ">
   <input id="undertaking_college_name" name="undertaking_college_name" type="text" placeholder="Name of the institution" class="form-control" >
     
@@ -71,13 +72,14 @@
      
  
 </div>
-<div class="form-group">
-  <label  for="">whether the college is approved under section 2(f) and 12(B) of the UGC Act: </label>
+<!--<div class="form-group">
+  <label  for="">Whether the college is approved under section 2(f) and 12(B) of the UGC Act: </label>
   <div class="college_approval_status">
     <input id="college_approval_status" type="text" name="college_approval_status" placeholder="Approved/Denied" class="form-control">
      
   </div>
 </div>
+-->
 <div class="form-group">
   <label  for="teaching_experience">Teaching Experience: </label>
   <div class=" ">
@@ -89,6 +91,56 @@
   <label  for="research_experience">Research Experience: </label>
   <div class=" ">
     <input id="research_experience" type="text" name="research_experience" placeholder="No. of years of experience" class="form-control">
+     
+  </div>
+</div>
+
+<div class="form-group">
+  <label  for="doctrate_degree_year">Doctrate Degree Year: </label>
+  <div class=" ">
+    <input id="doctrate_degree_year" type="text" name="doctrate_degree_year" placeholder="Year of Doctrate degree Completion" class="form-control">
+     
+  </div>
+</div>
+<div class="form-group">
+  <label  for="doctrate_degree_title">Doctrate Degree: </label>
+  <div class=" ">
+    <input id="doctrate_degree_title" type="text" name="doctrate_degree_title" placeholder="Field of Doctrate degree" class="form-control">
+     
+  </div>
+</div>
+<div class="form-group">
+  <label  for="papers_published">Number of papers published: </label>
+  <div class=" ">
+    <input id="papers_published" type="text" name="papers_published" placeholder="Papers published" class="form-control">
+     
+  </div>
+</div>
+<div class="form-group">
+  <label  for="papers_accepted">Number of papers accepted: </label>
+  <div class=" ">
+    <input id="papers_accepted" type="text" name="papers_accepted" placeholder="Papers Accpted" class="form-control">
+     
+  </div>
+</div>
+<div class="form-group">
+  <label  for="papers_communicated">Number of papers communicated: </label>
+  <div class=" ">
+    <input id="papers_communicated" type="text" name="papers_communicated" placeholder="Papers Communicated" class="form-control">
+     
+  </div>
+</div>
+<div class="form-group">
+  <label  for="book_published">Number of Books published: </label>
+  <div class=" ">
+    <input id="book_published" type="text" name="book_published" placeholder="books published" class="form-control">
+     
+  </div>
+</div>
+<div class="form-group">
+  <label  for="book_accepted">Number of Books accepted: </label>
+  <div class=" ">
+    <input id="book_accepted" type="text" name="book_accepted" placeholder="books accepted" class="form-control">
      
   </div>
 </div>

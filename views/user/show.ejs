@@ -1,5 +1,35 @@
+<table>
+  <tr>
+    <th>Area of Specialization</th> 
+     <th>Qualification</th> 
+      <th>Designation</th> 
+       <th>Name of the institution where the project will be undertaken</th> 
+        <th>Retired or not</th> 
+         <th>Whether the college is approved under section 2(f) and 12(B) of the UGC Act: </th> 
+          <th>Teaching Experience</th> 
+           <th>Research Experience</th> 
+            <th>User Photo</th> 
+    </tr>
+    <% _.each(user.profiles,function(profile) { %>
+    <tr data-id="<%= profile.id %>" data-model="profile">
+      <td><%= stock.area_of_specialization</td>
+      <td><%= stock.qualification</td> 
+      <td><%= stock.designation</td> 
+      <td><%= stock.teaching_experience</td> 
+      <td><%= stock.research_experience</td>
+      <td><%= stock.doctrate_degree_year</td> 
+      <td><%= stock.doctrate_degree_title</td> 
+      <td><%= stock.retired</td>
+      <td><%=stock.papers_published</td>
+      <td><%=stock.papers_accepted</td>
+      <td><%=stock.papers_communicated</td>
+      <td><%=stock.book_published</td>
+      <td><%=stock.book_accepted</td>
+      </tr>
 
-<form action="/profile/new" method="POST">
+    <% }); %>
+    </table>
+<!-- <form action="/profile/new" method="POST">
  <input type="hidden" value="<%=user.id%>" name="owner">
  <input type="submit" value="Update"/>
-</form>
+</form> -->

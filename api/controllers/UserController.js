@@ -20,12 +20,12 @@ module.exports = {
 	},
 
 	show:function(req,res,next){
-		User.findOne(req.param('id'),function showUser(err,user){
+		User.findOne(req.param('id')).populateAll().exec( function (err,user){
 			if (err) throw next(err)
 				res.view({
 					user:user
-				})
-		})
+				});
+		});
 	},
 	auth:function(req,res,next){
 		User.find({'email':req.param('email')}).exec(function loginUser(err,user){
