@@ -67,7 +67,7 @@ module.exports = {
     },
     admin_security_key:{
       type:'string',
-      required:true
+      required:'false'
     },
     
     profiles:{
