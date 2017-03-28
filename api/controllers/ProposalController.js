@@ -6,31 +6,29 @@
  */
 
 module.exports = {
-	attributes: {
-		broad_subject: {
-			type: 'string',
-			required: true
-		},
-		project_title: {
-			type: 'string',
-			numeric: true,
-			required: true
-		},
-		project_duration: {
-			type:'datetime',
-			required: true
+	'new':function(req,res){
+		req.session.authenticated="false";
+		console.log(req.session);
+		res.view();
+	},
 
-		},
-		estimated_budget: {
-			type:'integer',
-			min:0,
-			required:true
-		},
-		owner:{
-			model:'propo',
-			required:true
-		}
+	create:function(req,res,next){
+			User.create(req.params.all(),function customerCreated(err,user){
+				if (err){
+					 return res.redirect('/user/new')
+					}
+					res.redirect('/user/show/'+user.id);
+				
+		});
+	},
+	show:function(req,res,next){
+		User.findOne(req.param('id')).populateAll().exec( function (err,user){
+			if (err) throw next(err)
+				res.view({
+					user:user
+				});
+		});
+	},
 
-	}
 };
 

@@ -61,20 +61,14 @@ module.exports = {
   		type:'integer',
   		required:true
   	},
-  	college_name:{
-  		type:'string',
-  		required:true
-  	},
-    college_email:{
-    	type:'string',
-    	email:true,
-    	required:true
+  	role:{
+      type:'string',
+      required:true
     },
-    college_phone_no:{
-    	type:'integer',
-    	required:true
-    }
-  },
+    admin_security_key:{
+      type:'string',
+      required:true
+    },
     
     profiles:{
       collection:'profile',

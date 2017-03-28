@@ -16,7 +16,21 @@ module.exports = {
 			type:'string',
 			required:true
 		},
-		designation: {
+		college_name:{
+  		    type:'string',
+  		    required:true
+  	    },
+       college_email:{
+    	    type:'string',
+    	    email:true,
+    	    required:true
+        },
+       college_phone_no:{
+    	type:'integer',
+    	required:true
+    
+        },
+        designation: {
 			type: 'string',
 			required: true
 		},
@@ -43,20 +57,7 @@ module.exports = {
 			type: 'boolean',
 			required: true
 		},
-		college_account_number: {
-			type: 'string',
-			numeric:true,
-			required: true
-
-		},
-		college_approval_status: {
-			type: 'boolean',
-			required: true
-		},
-		undertaking_college_name: {
-			type: 'string',
-			required: true
-		},
+		
 		papers_published:{
 			type:'integer',
 			min:0

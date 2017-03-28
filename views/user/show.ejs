@@ -1,35 +1,38 @@
+ <%=user.id%>
+ <!--<form action="/profile/new" method="POST">
+ <input type="hidden" value="<%=user.id%>" name="owner">
+ <input type="submit" value="Update"/>
+</form> 
+-->
 <table>
   <tr>
-    <th>Area of Specialization</th> 
-     <th>Qualification</th> 
-      <th>Designation</th> 
-       <th>Name of the institution where the project will be undertaken</th> 
-        <th>Retired or not</th> 
-         <th>Whether the college is approved under section 2(f) and 12(B) of the UGC Act: </th> 
-          <th>Teaching Experience</th> 
-           <th>Research Experience</th> 
-            <th>User Photo</th> 
+    <th>First Name</th> 
+     <th>Middle Name</th> 
+      <th>Last Name</th> 
+       <th>Gender</th> 
+         <th>Date Of Birth</th> 
+         <th>Email id</th>
+          <th>Aadhar Number:</th>
+          <th>City</th> 
+           <th>State</th> 
+            <th>Pincode</th>
+            
+
     </tr>
-    <% _.each(user.profiles,function(profile) { %>
-    <tr data-id="<%= profile.id %>" data-model="profile">
-      <td><%= stock.area_of_specialization</td>
-      <td><%= stock.qualification</td> 
-      <td><%= stock.designation</td> 
-      <td><%= stock.teaching_experience</td> 
-      <td><%= stock.research_experience</td>
-      <td><%= stock.doctrate_degree_year</td> 
-      <td><%= stock.doctrate_degree_title</td> 
-      <td><%= stock.retired</td>
-      <td><%=stock.papers_published</td>
-      <td><%=stock.papers_accepted</td>
-      <td><%=stock.papers_communicated</td>
-      <td><%=stock.book_published</td>
-      <td><%=stock.book_accepted</td>
+    <% _.each(user,function(user) { %>
+    <tr data-id="<%= user.id %>" data-model="user">
+      <td><%=user.first_name</td>
+      <td><%=user.middle_name</td> 
+      <td><%=user.last_name</td>
+      <td><%=user.gender</td> 
+      <td><%=user.data_of_birth</td> 
+      <td><%=user.email</td> 
+      <td><%=user.aadhar_number</td> 
+      <td><%=user_city</td>
+      <td><%=user.state</td> 
+      <td><%=user.pincode</td> 
+     
       </tr>
 
     <% }); %>
     </table>
-<!-- <form action="/profile/new" method="POST">
- <input type="hidden" value="<%=user.id%>" name="owner">
- <input type="submit" value="Update"/>
-</form> -->

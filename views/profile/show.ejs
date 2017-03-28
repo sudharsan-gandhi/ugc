@@ -1,0 +1,45 @@
+<table>
+  <tr>
+    <th>Area of Specialization</th> 
+     <th>Qualification</th> 
+      <th>Designation</th> 
+       <th>Retired or not</th> 
+         <th>College Name</th> 
+         <th>College Email</th>
+          <th>College Phone Number</th>
+          <th>Teaching Experience</th> 
+           <th>Research Experience</th> 
+            <th>Doctrate Degree</th>
+            <th>Doctrate Year</th>
+            <th> Papers Published</th>
+            <th>Papers Accepted</th> 
+            <th>Papers Communicated</th> 
+            <th>Books published</th> 
+            <th>Books Accepted</th>
+            <th>Books Communicated</th> 
+            <th>User Photo</th>
+
+    </tr>
+    <% _.each(user.profiles,function(profile) { %>
+    <tr data-id="<%= profile.id %>" data-model="profile">
+      <td><%= profile.area_of_specialization</td>
+      <td><%= profile.qualification</td> 
+      <td><%= profile.designation</td>
+      <td><%=profile.college_name</td> 
+      <td><%=profile.college_email</td> 
+      <td><%=profile.college_phone_no</td> 
+      <td><%= profile.teaching_experience</td> 
+      <td><%= profile.research_experience</td>
+      <td><%= profile.doctrate_degree_year</td> 
+      <td><%= profile.doctrate_degree_title</td> 
+      <td><%= profile.retired</td>
+      <td><%=profile.papers_published</td>
+      <td><%=profile.papers_accepted</td>
+      <td><%=profile.papers_communicated</td>
+      <td><%=profile.book_published</td>
+      <td><%=profile.book_accepted</td>
+      <td><%=profile.book_communicated</td>
+      </tr>
+
+    <% }); %>
+    </table>
