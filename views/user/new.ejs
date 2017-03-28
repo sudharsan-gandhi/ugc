@@ -1,127 +1,191 @@
-<html> 
+<!DOCTYPE html>
+<html>
 <head>
-<title>form validation</title>
+<style type="text/css">
+	body
+	{
+		background-color: #A6ACAF;
+	}
+	</style>
+
+	<title>User Profile</title>
+	<!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
-<form action="/user/create" method="post" id="form" onsubmit="return validate_all('results');">
-<table cellspacing="10">
-<tr>
-	<td>First Name</td>
-	<td><input type="text" name="firstname" required="required" maxlength="25" id="firstname">  
-	</td>
-</tr>
-<tr>
-	<td>Middle Name</td>
-	<td><input type="text" name="middlename"  maxlength="25" id="middlename"></td>
-</tr>
+    <div class="container">
+<form class="form-horizontal" action="/profile/create" method="POST">
+<!-- <input type="hidden" name="owner" value="<%- user.id%>" />
+ -->
+<fieldset>
 
-<tr>
-	<td>Last Name</td>
-	<td><input type="text" required="required" name="lastname" maxlength="25" id="lastname"> </td>
-</tr>
+<!-- Form Name -->
+<legend>PROFILE</legend>
 
-<tr>
-	<td>Email</td>
-	<td><input type="text" required="required" name="email" maxlength="50" id="email"> </div></td>
-</tr>
-<tr>
-	<td>Password</td>
-	<td><input type="password" required="required" name="password" maxlength="25" id="password" >
-	</td>
-</tr>
-<tr>
-	<td>Confirm Password</td>
-	<td><input type="password" required="required" name="cpass" maxlength="25" id="password"></td>
-</tr>
-<tr>
-	<td>DateOfBirth</td>
-	<td><input type="date" required="required"  name="date_of_birth" id="date_of_birth"></div></td>
-</tr>
-<tr>
-	<td>Address</td>
-	<td><textarea style="resize:none" rows="4" cols="25" required="required"/></td>
-</tr>
-<tr>
-	<td>City</td>
-	<td><input type="text" required="required" name="city" maxlength="25" id="city" ></td>
-</tr>
-<tr>
-	<td>state:</td>
-	<td><select name="state">
-		<option value="">------------Select State------------</option>
-		<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-		<option value="Andhra Pradesh">Andhra Pradesh</option>
-		<option value="Arunachal Pradesh">Arunachal Pradesh</option>
-		<option value="Assam">Assam</option>
-		<option value="Bihar">Bihar</option>
-		<option value="Chandigarh">Chandigarh</option>
-		<option value="Chhattisgarh">Chhattisgarh</option>
-		<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
-		<option value="Daman and Diu">Daman and Diu</option>
-		<option value="Delhi">Delhi</option>
-		<option value="Goa">Goa</option>
-		<option value="Gujarat">Gujarat</option>
-		<option value="Haryana">Haryana</option>
-		<option value="Himachal Pradesh">Himachal Pradesh</option>
-		<option value="Jammu and Kashmir">Jammu and Kashmir</option>
-		<option value="Jharkhand">Jharkhand</option>
-		<option value="Karnataka">Karnataka</option>
-		<option value="Kerala">Kerala</option>
-		<option value="Lakshadweep">Lakshadweep</option>
-		<option value="Madhya Pradesh">Madhya Pradesh</option>
-		<option value="Maharashtra">Maharashtra</option>
-		<option value="Manipur">Manipur</option>
-		<option value="Meghalaya">Meghalaya</option>
-		<option value="Mizoram">Mizoram</option>
-		<option value="Nagaland">Nagaland</option>
-		<option value="Orissa">Orissa</option>
-		<option value="Pondicherry">Pondicherry</option>
-		<option value="Punjab">Punjab</option>
-		<option value="Rajasthan">Rajasthan</option>
-		<option value="Sikkim">Sikkim</option>
-		<option value="Tamil Nadu">Tamil Nadu</option>
-		<option value="Tripura">Tripura</option>
-		<option value="Uttaranchal">Uttaranchal</option>
-		<option value="Uttar Pradesh">Uttar Pradesh</option>
-		<option value="West Bengal">West Bengal</option>
-	</select></td>
-</tr>
+<!-- Text input-->
+<div class="form-group">
+  <label  for="Area_of_specialization">Area of specialization: </label>  
+  
+  <input id="Area_of_specialization" name="Area_of_specialization" type="text" placeholder="Field of work" class="form-control" >
+    
+ 
+</div>
 
-<tr>
-	<td>Pincode</td>
-	<td><input type="text" required="required" name="pincode" maxlength="25" id="pincode"></td>
-</tr>
+<!-- Text input-->
+<div class="form-group">
+  <label  for="Qualification">Qualification: </label>  
+  
+  <input id="Qualification" name="Qualification" type="text" placeholder="BE/ME/PhD" class="form-control">
+    
+</div>
 
-<tr>
-	<td>Gender</td>
-	<td>
-		<select name="gender" required="required">
-			<option value="1">male</option>
-			<option value="0">female</option>
-		</select>
-	</td>
-</tr>
+<!-- Text input-->
+<div class="form-group">
+  <label  for="Designation">Designation: </label>  
+  <div class=" ">
+  <input id="Designation" name="Designation" type="text" placeholder="Professor/Principal"  >
+    
+  </div>
+</div>
+<<<<<<< HEAD
+<div class="form-group">
+ <label for="college_name">College Name:</label>
+ <div class=" ">
+  <input  id="college_name" name="college_name" type="text" class="form-control">
+  </div>
+</div>
+<div class="form-group">
+  <label class="college-phone-number">College phone number:</label>
+  <div class=" ">
+  <input type="text" name="college_phone_number" id="college_phone_no" class="form-control" >
+ </div>
+</div>
 
-<tr>
-	<td>Phone Number</td>
-	<td><input type="text" required="required"  name="contact_no" maxlength="25" id="contact_no"></td>
-</tr>
-<tr>
-	<td>College Name</td>
-	<td><input type="text" required="required" name="college_name" maxlength="25" id="college_name"></td>
-</tr>
-<tr>
-	<td>College phone number</td>
-	<td><input type="text" required="required" name="college_phone_no" maxlength="25" id="college_phone_no"  ></td>
-</tr>
-<tr>
-	<td>College mail</td>
-	<td><input type="text" required="required" name="college_email" maxlength="25" id="college_mail"></td>
-</tr>
-<tr>
-	<td colspan="2"><input type="submit" name="submit" value="Register"></td>
-</tr>
-</table>
+<div class="form-group">
+  <label class="college_mail">College mail:</label>
+  <div class=" ">
+  <input type="text" name="college_email" maxlength="25" id="college_mail" class="form-control">
+  </div>
+</div>
+
+<!--<div class="form-group">
+  <label  for="undertaking_college_name">Name of the institution where the project will be undertaken:  </label>  
+  <div class=" ">
+  <input id="undertaking_college_name" name="undertaking_college_name" type="text" placeholder="Name of the institution" class="form-control" >
+    
+  </div>
+</div>
+=======
+
+>>>>>>> origin/master
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label  for="retired">Retired: </label>
+  
+    <input id="retired" type="radio" name="retired" value="Yes"  placeholder="Retired/Not Retired"> Yes 
+    <input id="retired" type="radio" name="retired" value="No"  placeholder="Retired/Not Retired"> No <br>
+     
+ 
+</div>
+<div class="form-group">
+  <label  for="teaching_experience">Teaching Experience: </label>
+  <div class=" ">
+    <input id="teaching_experience" type="text" name="teaching_experience" placeholder="No. of years of experience" class="form-control">
+     
+  </div>
+</div>
+<div class="form-group">
+  <label  for="research_experience">Research Experience: </label>
+  <div class=" ">
+    <input id="research_experience" type="text" name="research_experience" placeholder="No. of years of experience" class="form-control">
+     
+  </div>
+</div>
+
+<div class="form-group">
+  <label  for="doctrate_degree_year">Doctrate Degree Year: </label>
+  <div class=" ">
+    <input id="doctrate_degree_year" type="text" name="doctrate_degree_year" placeholder="Year of Doctrate degree Completion" class="form-control">
+     
+  </div>
+</div>
+<div class="form-group">
+  <label  for="doctrate_degree_title">Doctrate Degree: </label>
+  <div class=" ">
+    <input id="doctrate_degree_title" type="text" name="doctrate_degree_title" placeholder="Field of Doctrate degree" class="form-control">
+     
+  </div>
+</div>
+<div class="form-group">
+  <label  for="papers_published">Number of papers published: </label>
+  <div class=" ">
+    <input id="papers_published" type="text" name="papers_published" placeholder="Papers published" class="form-control">
+     
+  </div>
+</div>
+<div class="form-group">
+  <label  for="papers_accepted">Number of papers accepted: </label>
+  <div class=" ">
+    <input id="papers_accepted" type="text" name="papers_accepted" placeholder="Papers Accpted" class="form-control">
+     
+  </div>
+</div>
+<div class="form-group">
+  <label  for="papers_communicated">Number of papers communicated: </label>
+  <div class=" ">
+    <input id="papers_communicated" type="text" name="papers_communicated" placeholder="Papers Communicated" class="form-control">
+     
+  </div>
+</div>
+<div class="form-group">
+  <label  for="book_published">Number of Books published: </label>
+  <div class=" ">
+    <input id="book_published" type="text" name="book_published" placeholder="books published" class="form-control">
+     
+  </div>
+</div>
+<div class="form-group">
+  <label  for="book_accepted">Number of Books accepted: </label>
+  <div class=" ">
+    <input id="book_accepted" type="text" name="book_accepted" placeholder="books accepted" class="form-control">
+     
+  </div>
+</div>
+
+
+
+<!-- File Button --> 
+<div class="form-group">
+  <label  for="filebutton">Upload Photo: </label>
+  <div class=" ">
+    <input id="filebutton" name="filebutton" class="input-file" type="file" >
+  </div>
+</div>
+
+
+<!-- Button -->
+<div class="form-group">
+  <label  for="singlebutton"> </label>
+  <div class=" ">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Update</button>
+      <button id="singlebutton" name="singlebutton" class="btn btn-primary">Cancel</button>
+  </div>
+</div>
+
+
+</fieldset>
 </form>
+
+</div>
 </body>
+
 </html>
