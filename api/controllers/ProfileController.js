@@ -9,7 +9,7 @@ module.exports = {
 	'new':function(req,res){
 		req.session.authenticated="false";
 		console.log(req.session);
-		User.findOne(1).exec(function foundUser(err,profile){
+		User.findOne(1).exec(function foundUser(err,user){
 			if(err) res.redirect('/');
 			res.view({
 			user:user
@@ -20,17 +20,17 @@ module.exports = {
 	},
 
 	create:function(req,res,next){
-			Profile.create(req.params.all(),function customerCreated(err,profile){
+			User.create(req.params.all(),function customerCreated(err,user){
 				if (err) return next(err)
 					
-				res.redirect('/profile/show'+ profile.owner);
+				res.redirect('/profile/show'+ user.owner);
 		});
 	},
 	show:function(req,res,next){
-		User.findOne(req.param('id')).populateAll().exec( function (err,profile){
+		User.findOne(req.param('id'),function foundUser (err,user){
 			if (err) throw next(err)
 				res.view({
-					profile:profile
+					user:user
 				});
 		});
 	},

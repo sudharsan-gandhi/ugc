@@ -12,6 +12,15 @@
       "area_of_specialization": {
         "type": "string"
       },
+      "college_name": {
+        "type": "string"
+      },
+      "college_email": {
+        "type": "string"
+      },
+      "college_phone_no": {
+        "type": "integer"
+      },
       "designation": {
         "type": "string"
       },
@@ -29,15 +38,6 @@
       },
       "retired": {
         "type": "boolean"
-      },
-      "college_account_number": {
-        "type": "string"
-      },
-      "college_approval_status": {
-        "type": "boolean"
-      },
-      "undertaking_college_name": {
-        "type": "string"
       },
       "papers_published": {
         "type": "integer"
@@ -59,7 +59,7 @@
       },
       "owner": {
         "type": "integer",
-        "model": "profile",
+        "model": "user",
         "foreignKey": true,
         "alias": "owner"
       },
@@ -77,6 +77,33 @@
       }
     },
     "proposal": {
+      "broad_subject": {
+        "type": "string"
+      },
+      "college_account_number": {
+        "type": "string"
+      },
+      "college_approval_status": {
+        "type": "boolean"
+      },
+      "undertaking_college_name": {
+        "type": "string"
+      },
+      "project_title": {
+        "type": "string"
+      },
+      "project_duration": {
+        "type": "datetime"
+      },
+      "estimated_budget": {
+        "type": "integer"
+      },
+      "owner": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "owner"
+      },
       "id": {
         "type": "integer",
         "autoIncrement": true,
@@ -129,14 +156,11 @@
       "pincode": {
         "type": "integer"
       },
-      "college_name": {
+      "role": {
         "type": "string"
       },
-      "college_email": {
+      "admin_security_key": {
         "type": "string"
-      },
-      "college_phone_no": {
-        "type": "integer"
       },
       "id": {
         "type": "integer",

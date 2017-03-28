@@ -42,7 +42,7 @@ module.exports = {
 			required:true
 		},
 		owner:{
-			model:'proposal',
+			model:'user',
 			required:true
 		}
 

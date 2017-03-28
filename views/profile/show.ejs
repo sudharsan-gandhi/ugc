@@ -1,3 +1,4 @@
+<div class='container'>
 <table>
   <tr>
     <th>Area of Specialization</th> 
@@ -21,7 +22,7 @@
 
     </tr>
     <% _.each(user.profiles,function(profile) { %>
-    <tr data-id="<%= profile.id %>" data-model="profile">
+    <tr data-id="<%= user.id %>" data-model="user">
       <td><%= profile.area_of_specialization</td>
       <td><%= profile.qualification</td> 
       <td><%= profile.designation</td>
@@ -40,6 +41,8 @@
       <td><%=profile.book_accepted</td>
       <td><%=profile.book_communicated</td>
       </tr>
-
+       <a class="btn btn-medium btn-primary" href="/profile/edit/<%= user.id%>">Edit</a>
     <% }); %>
+
     </table>
+    </div>

@@ -27,7 +27,7 @@ module.exports = {
         },
        college_phone_no:{
     	type:'integer',
-    	required:true
+    	required: true
     
         },
         designation: {
@@ -86,7 +86,7 @@ module.exports = {
 		},
 
 		owner:{
-			model:'profile',
+			model:'user',
 			required:true
 		}
 

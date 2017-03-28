@@ -74,15 +74,19 @@ module.exports = {
       collection:'profile',
       via:'owner'
     },
-    beforeCreate:function(values,next){
-      console.log('inside beforeCreate');
-      require('bcrypt').hash(values.password,10,function passwordEncrypted(err,encryptedPassword){
-        if (err) throw next(err);
-          console.log("1"+values.password);
-          values.password = encryptedPassword;
-          console.log("2"+values.password);
-          next();
-      });
+    proposals:{
+      collection:'proposal',
+      via:'owner'
+    }
+    //beforeCreate:function(values,next){
+    // console.log('inside beforeCreate');
+     //require('bcrypt').hash(values.password,10,function passwordEncrypted(err,encryptedPassword){
+      // if (err) throw next(err);
+        //  console.log("1"+values.password);
+         // values.password = encryptedPassword;
+         // console.log("2"+values.password);
+         // next();
+    // });
   }
     
     
