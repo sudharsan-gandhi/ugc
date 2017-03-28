@@ -40,13 +40,13 @@ module.exports.connections = {
   * Run: npm install sails-mysql                                             *
   *                                                                          *
   ***************************************************************************/
- // ugcmysql: {
-  //  adapter: 'sails-mysql',
-  //  host: 'localhost',
-   // user: 'root', //optional
-   // password: '123456', //optional
-    //database: 'ugc_project_schema' //optional
- // },
+ ugcmysql: {
+   adapter: 'sails-mysql',
+   host: 'localhost',
+   user: 'root', //optional
+   password: '123456', //optional
+    database: 'ugc_project_schema' //optional
+ },
 
   /***************************************************************************
   *                                                                          *
