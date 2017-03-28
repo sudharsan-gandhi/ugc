@@ -8,7 +8,11 @@
 	}
 	</style>
 
+<<<<<<< HEAD
 	<title>User Profile</title>
+=======
+	<title>sign up</title>
+>>>>>>> a43dbb611caf9afb0294423f648645bcb08d5f41
 	<!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -17,10 +21,14 @@
 
 <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<<<<<<< HEAD
 
+=======
+>>>>>>> a43dbb611caf9afb0294423f648645bcb08d5f41
 </head>
 
 <body>
+<<<<<<< HEAD
     <div class="container">
 <form class="form-horizontal" action="/profile/create" method="POST">
 <!-- <input type="hidden" name="owner" value="<%- user.id%>" />
@@ -168,12 +176,155 @@
   <label  for="singlebutton"> </label>
   <div class=" ">
     <button id="singlebutton" name="singlebutton" class="btn btn-primary">Update</button>
+=======
+<div class="container">
+<form class="form-horizontal" action="/user/create" method="POST">
+ <input type="hidden" name="owner" value="<%- user.id%>" />
+ 
+<fieldset>
+
+<!-- Form Name -->
+<legend>SIGN UP</legend>
+<div class="form-group">
+ <label  for="first_name">First Name</label>
+ <div class=" ">
+  <input type="text" name="firstname" maxlength="25" id="first_name" placeholder="Enter the first name" class="form-control">  
+</div>
+</div>
+
+<div class="form-group">
+ <label  for="middle_name">Middle Name</label>
+ <div class=" ">
+  <input type="text" name="middlename"  maxlength="25" id="middlename"  placeholder="Enter the middle name" class="form-control">
+ </div>
+ </div>
+
+<div class="form-group">
+ <label  for="last_name">Last Name</label>
+ <div class=" ">
+	<input type="text" name="lastname" maxlength="25" id="last_name"  placeholder="Enter the last name" class="form-control"> 
+</div>
+</div>
+
+
+<div class="form-group">
+	<label  for="email">Email</label>
+	<div class=" ">
+	<input type="text" name="email" maxlength="50" id="email"  placeholder="enter the email" class="form-control">  
+</div>
+</div>
+
+<div class="form-group">
+	<label  for="password">Password</label>
+	<div class=" "> 
+	<input type="password" name="password" maxlength="25" id="password"  placeholder="enter the password" class="form-control" >
+</div>
+</div>
+	
+<div class="form-group">
+ <label  for="confirm_password">Confirm Password</label>
+ <div class=" ">
+  <input type="password" name="cpass" maxlength="25" id="confirm_password"  placeholder="Enter the confirm password" class="form-control">
+</div>
+</div>
+
+<div class="form-group">
+
+	<label  for="date_of_birth">DateOfBirth</label>
+	<div class=" ">
+	<input type="date"   name="date_of_birth" id="date_of_birth"  placeholder="Enter the data of birth" class="form-control">
+</div>
+</div>
+
+<div class="form-group">	
+
+	<label  for="address">Address</label>
+	<div class=" ">
+	<textarea style="resize:none" rows="4" cols="25" required="required"/>
+</div>
+</div>
+
+<div class="form-group">	
+ <label  for="city">City</label>
+ <div class=" ">
+	<input type="text"  name="city" maxlength="25" id="city"  placeholder="enter the city" class="form-control">
+</div>
+</div>
+
+	<option value="">------------Select State------------</option>
+		<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+		<option value="Andhra Pradesh">Andhra Pradesh</option>
+		<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+		<option value="Assam">Assam</option>
+		<option value="Bihar">Bihar</option>
+		<option value="Chandigarh">Chandigarh</option>
+		<option value="Chhattisgarh">Chhattisgarh</option>
+		<option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option>
+		<option value="Daman and Diu">Daman and Diu</option>
+		<option value="Delhi">Delhi</option>
+		<option value="Goa">Goa</option>
+		<option value="Gujarat">Gujarat</option>
+		<option value="Haryana">Haryana</option>
+		<option value="Himachal Pradesh">Himachal Pradesh</option>
+		<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+		<option value="Jharkhand">Jharkhand</option>
+		<option value="Karnataka">Karnataka</option>
+		<option value="Kerala">Kerala</option>
+		<option value="Lakshadweep">Lakshadweep</option>
+		<option value="Madhya Pradesh">Madhya Pradesh</option>
+		<option value="Maharashtra">Maharashtra</option>
+		<option value="Manipur">Manipur</option>
+		<option value="Meghalaya">Meghalaya</option>
+		<option value="Mizoram">Mizoram</option>
+		<option value="Nagaland">Nagaland</option>
+		<option value="Orissa">Orissa</option>
+		<option value="Pondicherry">Pondicherry</option>
+		<option value="Punjab">Punjab</option>
+		<option value="Rajasthan">Rajasthan</option>
+		<option value="Sikkim">Sikkim</option>
+		<option value="Tamil Nadu">Tamil Nadu</option>
+		<option value="Tripura">Tripura</option>
+		<option value="Uttaranchal">Uttaranchal</option>
+		<option value="Uttar Pradesh">Uttar Pradesh</option>
+		<option value="West Bengal">West Bengal</option>
+	</select>
+
+<div class="form-group">
+	<label  for="pincode">Pincode</label>
+	<div class=" ">
+	<input type="text" name="pincode" maxlength="25" id="pincode"  placeholder="Enter the pincode" class="form-control">
+</div>
+</div>
+<div class="form-group">
+<label  for="gender">Gender</label>
+	
+		<select name="gender" required="required">
+			<option value="1">male</option>
+			<option value="0">female</option>
+		</select>
+	
+
+<div class="form-group">
+	<label  for="phone_number">Phone Number</label>
+	<div class=" ">
+	<input type="text" name="contact_no" id="contact_no"  placeholder="Enter the phone number" class="form-control">
+</div>
+</div>
+<div class="form-group">
+  <label  for="singlebutton"> </label>
+  <div class=" ">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">submit<button>
+>>>>>>> a43dbb611caf9afb0294423f648645bcb08d5f41
       <button id="singlebutton" name="singlebutton" class="btn btn-primary">Cancel</button>
   </div>
 </div>
 
+<<<<<<< HEAD
 
 </fieldset>
+=======
+</table>
+>>>>>>> a43dbb611caf9afb0294423f648645bcb08d5f41
 </form>
 
 </div>
