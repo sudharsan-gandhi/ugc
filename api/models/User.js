@@ -73,7 +73,8 @@ module.exports = {
     profiles:{
       collection:'profile',
       via:'owner'
-    },
+    }
+  }
     beforeCreate:function(values,next){
       console.log('inside beforeCreate');
       require('bcrypt').hash(values.password,10,function passwordEncrypted(err,encryptedPassword){
@@ -83,6 +84,6 @@ module.exports = {
           console.log("2"+values.password);
           next();
       });
-    }
+    
 };
 
