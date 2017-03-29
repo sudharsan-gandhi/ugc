@@ -7,7 +7,7 @@
 
 module.exports = {
 	'new':function(req,res){
-		req.session.authenticated="false";
+		// req.session.authenticated="false";
 		console.log(req.session);
 		res.view();
 	},
@@ -45,14 +45,14 @@ module.exports = {
 		});
 	},  
 	auth:function(req,res,next){
-		User.find({'email':req.param('email')}).exec(function loginUser(err,user){
+		User.findOneByEmail(req.param('email')).exec(function loginUser(err,user){
 			if(err) return next(err)
-				console.log(user[0].password);
+				console.log(user.password);
 				 // sails.log(user.password);
-				 if(user[0].password==req.param('password')){
+				 if(user.password==req.param('password')){
 					console.log('in');
 					req.session.authenticated=true;
-					res.redirect('/user/show/'+user[0].id);
+					res.redirect('/user/show/'+user.id);
 				}else
 					res.redirect('/');
 		})
