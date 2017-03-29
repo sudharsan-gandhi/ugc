@@ -1,0 +1,14 @@
+<form action="/proposal/update/<%= proposal.owner%>" method="POST" class="form-control">
+   <input type='hidden' value='<%- proposal.owner>'>
+  <h2>Edit your proposal details here</h2>
+
+  <input value="<%=proposal.project_title %>" name="project_title" type="text" class="form-control"/>
+  <input value="<%=proposal.broad_subject%>" name="broad_subject" type="text" class="form-control"/>
+  <input value="<%=proposal.estimated_budget %>" name="estimated_budget" type="text" class="form-control"/>
+  <input value="<%=proposal.project_duration %>" name="project_duration" type="text" class="form-control"/>
+  <input value="<%=proposal.abstract %>" name="abstract" type="text" class="form-control"/>
+  <input value="<%=proposal.college_account_number %>" name="college_account_number" type="text" class="form-control"/>
+  <input value="<%=proposal.college_approval_status %>" name=" college_approval_status" type="text" class="form-control"/>
+  <input value="<%=proposal.undertaking_college_name %>" name="undertaking_college_name" type="text" class="form-control"/>
+  <input type="submit" value="Save" class="btn btn-lg btn-primary btn-block" />
+ </form>

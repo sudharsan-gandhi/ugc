@@ -31,6 +31,11 @@ module.exports = {
 			numeric: true,
 			required: true
 		},
+		abstract: {
+			type: 'string',
+			numeric: true,
+			required: true
+		},
 		project_duration: {
 			type:'datetime',
 			required: true

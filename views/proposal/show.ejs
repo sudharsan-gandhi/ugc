@@ -1,0 +1,29 @@
+<div class='container'>
+<table>
+  <tr>
+    <th>Project Title</th> 
+     <th>Broad Subject</th> 
+      <th>Estimated Budget</th> 
+       <th>Abstract</th>
+       <th>Projec Durationt</th> 
+         <th>College Account Number</th> 
+         <th>Undertaking College Name</th>
+          <th>College Approval Status</th>
+          
+  </tr>
+  <% _.each(user.proposals,function(proposal) { %>
+    <tr data-id="<%= proposal.owner%>" data-model="user">
+      <td><%= proposal.project_title</td>
+      <td><%= proposal.broad_subject</td> 
+      <td><%= proposal.estimated_budget</td>
+      <td><%=proposal.abstract</td> 
+      <td><%=proposal.project_duration</td> 
+      <td><%=proposal.college_account_number</td> 
+      <td><%= proposal.college_approval_status</td> 
+      <td><%= proposal.undertaking_college_name</td> 
+  </tr>
+  <a class="btn btn-medium btn-primary" href="/proposal/edit/<%= proposal.owner%>">Edit Proposal</a>
+    <% }); %>
+
+    </table>
+    </div>

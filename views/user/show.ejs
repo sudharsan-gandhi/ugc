@@ -1,9 +1,8 @@
- <!--<%=user.id%>
- <!--<form action="/profile/new" method="POST">
+ 
+ <form action="/user/new" method="POST">
  <input type="hidden" value="<%=user.id%>" name="owner">
- <input type="submit" value="Update"/>
-</form> 
--->
+ 
+</form>
 <table>
   <tr>
     <th>First Name</th> 
@@ -33,6 +32,7 @@
       <td><%=user.pincode</td> 
      
       </tr>
-
+      
     <% }); %>
     </table>
+    </form>

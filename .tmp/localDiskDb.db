@@ -92,6 +92,9 @@
       "project_title": {
         "type": "string"
       },
+      "abstract": {
+        "type": "string"
+      },
       "project_duration": {
         "type": "datetime"
       },

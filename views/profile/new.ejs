@@ -24,12 +24,8 @@
     <div class="container">
 <form class="form-horizontal" action="/profile/create" method="POST">
 <<<<<<< HEAD
-<!-- <input type="hidden" name="owner" value="<%- user.id%>" />
- -->
-=======
- <input type="hidden" name="owner" value="<%- user%>" />
- 
->>>>>>> a43dbb611caf9afb0294423f648645bcb08d5f41
+ <input type="hidden" name="owner" value="<%-profile.owner%>" />
+
 <fieldset>
 
 <!-- Form Name -->
@@ -37,26 +33,26 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label  for="Area_of_specialization">Area of specialization: </label>  
+  <label  for="area_of_specialization">Area of specialization: </label>  
   
-  <input id="Area_of_specialization" name="Area_of_specialization" type="text" placeholder="Field of work" class="form-control" >
+  <input id="area_of_specialization" name="area_of_specialization" type="text" placeholder="Field of work" class="form-control" >
     
  
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label  for="Qualification">Qualification: </label>  
+  <label  for="qualification">Qualification: </label>  
   
-  <input id="Qualification" name="Qualification" type="text" placeholder="BE/ME/PhD" class="form-control">
+  <input id="qualification" name="qualification" type="text" placeholder="BE/ME/PhD" class="form-control">
     
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label  for="Designation">Designation: </label>  
+  <label  for="designation">Designation: </label>  
   <div class=" ">
-  <input id="Designation" name="Designation" type="text" placeholder="Professor/Principal" class="form-control" >
+  <input id="designation" name="designation" type="text" placeholder="Professor/Principal" class="form-control" >
     
   </div>
 </div>
@@ -83,14 +79,7 @@
   </div>
 </div>
 
-<!--<div class="form-group">
-  <label  for="undertaking_college_name">Name of the institution where the project will be undertaken:  </label>  
-  <div class=" ">
-  <input id="undertaking_college_name" name="undertaking_college_name" type="text" placeholder="Name of the institution" class="form-control" >
-    
-  </div>
-</div>
->>>>>>> a43dbb611caf9afb0294423f648645bcb08d5f41
+
 
 <!-- Select Basic -->
 <div class="form-group">

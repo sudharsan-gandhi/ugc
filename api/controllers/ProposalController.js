@@ -9,15 +9,17 @@ module.exports = {
 	'new':function(req,res){
 		req.session.authenticated="false";
 		console.log(req.session);
-		res.view();
+		res.view({
+			user:user
+		});
 	},
 
 	create:function(req,res,next){
 			User.create(req.params.all(),function customerCreated(err,user){
 				if (err){
-					 return res.redirect('/user/new')
+					 return res.redirect('/proposal/new')
 					}
-					res.redirect('/user/show/'+user.id);
+					res.redirect('/proposal/show/'+user.id);
 				
 		});
 	},
@@ -30,12 +32,20 @@ module.exports = {
 		});
 	},
 	edit: function(req,res,next){
-		User.findOne(req.param('id'), function foundUser (err,user){
+		User.findOne(req.param('id'), function foundUser (err,proposal){
 			if(err) return next(err);
-			if(!user) return next();
+			if(!user) return next('User doesn\'t exist.');
 			res.view({
 				user:user
 			});
+		});
+	},
+	update: function(req,res,next){
+		User.update(req.param('id'),req.params.all(),function userUpdated (err){
+			if(err){
+				return res.redirect('/proposal/edit/' +req.param('id'));
+			}
+			res.redirect('proposal/show/' +req.param('id'));
 		});
 	}  
 

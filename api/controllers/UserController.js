@@ -27,6 +27,23 @@ module.exports = {
 				});
 		});
 	},
+	edit: function(req,res,next){
+		User.findOne(req.param('id'), function foundUser (err,user){
+			if(err) return next(err);
+			if(!user) return next('User doesn\'t exist.');
+			res.view({
+				user:user
+			});
+		});
+	},
+	update: function(req,res,next){
+		User.update(req.param('id'),req.params.all(),function userUpdated (err){
+			if(err){
+				return res.redirect('/profile/edit/' +req.param('id'));
+			}
+			res.redirect('profile/show/' +req.param('id'));
+		});
+	},  
 	auth:function(req,res,next){
 		User.find({'email':req.param('email')}).exec(function loginUser(err,user){
 			if(err) return next(err)

@@ -1,0 +1,23 @@
+<form action="/profile/update/<%= profile.owner %>" method="POST" class="form-control">
+  <input type='hidden' value='<%- profile.owner>'>
+  <h2>Edit your profile details here</h2>
+
+  <input value="<%=profile.area_of_specialization %>" name="area_of_specialization" type="text" class="form-control"/>
+  <input value="<%=profile.qualification %>" name="qualification" type="text" class="form-control"/>
+  <input value="<%=profile.designation %>" name="designation" type="text" class="form-control"/>
+  <input value="<%=profile.college_name %>" name="college_name" type="text" class="form-control"/>
+  <input value="<%=profile.college_email %>" name="college_email" type="text" class="form-control"/>
+  <input value="<%=profile.college_phone_no %>" name="college_phone_no" type="text" class="form-control"/>
+  <input value="<%=profile.teaching_experience %>" name="teaching_experience " type="text" class="form-control"/>
+  <input value="<%=profile.research_experience %>" name="research_experience" type="text" class="form-control"/>
+  <input value="<%=profile.doctrate_degree_year %>" name="doctrate_degree_year" type="text" class="form-control"/>
+  <input value="<%=profile.doctrate_degree_title %>" name="doctrate_degree_title" type="text" class="form-control"/>
+  <input value="<%= profile.retired %>" name="retired" type="text" class="form-control"/>
+  <input value="<%=profile.papers_published %>" name="papers_published" type="text" class="form-control"/>
+  <input value="<%= profile.papers_accepted%>" name="papers_accepted" type="text" class="form-control"/>
+  <input value="<%=profile.papers_communicated %>" name="papers_communicated" type="text" class="form-control"/>
+  <input value="<%=profile.book_published %>" name="book_published" type="text" class="form-control"/>
+  <input value="<%=profile.book_accepted %>" name="book_accepted" type="text" class="form-control"/>
+  <input value="<%= profile.book_communicated<%>" name="book_communicated" type="text" class="form-control"/>
+  <input type="submit" value="Save" class="btn btn-lg btn-primary btn-block" />
+ </form>

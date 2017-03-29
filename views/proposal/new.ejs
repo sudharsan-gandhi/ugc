@@ -13,37 +13,43 @@
 <div class="container">
   <h2>Continous Monitoring System</h2>
   
-  <form>
+  <form class="form-horizontal" action="/proposal/create" method="POST">
+
+   <input type="hidden" name="owner" value="<%-profile.owner%>" />
     <div class="form-group">
-      <label for="title">Project Title</label>
-      <input type="text" class="form-control" id="title">
+      <label for="project_title">Project Title</label>
+      <input type="text" class="form-control" id="project_title">
     </div>
     <div class="form-group">
-     <label for="sub">Broad Subject</label>
-      <input type="text" class="form-control" id="sub">
+     <label for="broad_subject">Broad Subject</label>
+      <input type="text" class="form-control" id="broad_subject">
     </div>
       <div class="form-group">
-     <label for="amt">Estimated Budget</label>
-      <input type="text" class="form-control" id="amt">(approx.)
+     <label for="estimated_budget">Estimated Budget</label>
+      <input type="text" class="form-control" id="estimated_budget">(approx.)
     </div>
     <div class="form-group">
-  <label for="abs">Abstract</label>
-  <textarea class="form-control" rows="4" id="abs"></textarea>
+     <label for="project_duration">Project Duration</label>
+      <input type="text" class="form-control" id="project_duration">
+    </div>
+    <div class="form-group">
+  <label for="abstract">Abstract</label>
+  <textarea class="form-control" rows="4" id="abstract"></textarea>
 </div>
 <div class="form-group">
-      <label for="acc">College Account Number</label>
-      <input type="text" class="form-control" id="acc">
+      <label for="college_account_number">College Account Number</label>
+      <input type="text" class="form-control" id="college_account_number">
     </div>
       <div class="form-group">
-      <label for="name">Undertaking College Name</label>
-      <input type="text" class="form-control" id="name">
+      <label for="undertaking_college_name">Undertaking College Name</label>
+      <input type="text" class="form-control" id="undertaking_college_nameundertaking_college_name">
     </div>
     College Approval Status
     <div class="radio">
-  <label><input type="radio" name="optradio">Yes</label>
+  <label><input type="radio" name="college_approval_status" id="college_approval_status">Yes</label>
 </div>
 <div class="radio">
-  <label><input type="radio" name="optradio">No</label>
+  <label><input type="radio" name="college_approval_status" id="college_approval_status">No</label>
 </div>
   </form>
 </div>
