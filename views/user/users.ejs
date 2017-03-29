@@ -1,0 +1,13 @@
+<legend>All user list</legend>
+<table>
+<!-- table headers list -->
+  <th>user name</th>
+<!-- end of table headers list -->
+<!-- repeat each user from users list -->
+  <% _.each(users,function(user){ %>
+  <tr>
+    <td><%=user.firstname %></td>
+  </tr>
+  <% }) %>
+<!-- end of user list -->
+</table>

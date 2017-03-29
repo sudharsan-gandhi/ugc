@@ -1,38 +1,16 @@
- 
- <form action="/user/new" method="POST">
- <input type="hidden" value="<%=user.id%>" name="owner">
- 
-</form>
-<table>
-  <tr>
-    <th>First Name</th> 
-     <th>Middle Name</th> 
-      <th>Last Name</th> 
-       <th>Gender</th> 
-         <th>Date Of Birth</th> 
-         <th>Email id</th>
-          <th>Aadhar Number:</th>
-          <th>City</th> 
-           <th>State</th> 
-            <th>Pincode</th>
-            
-
-    </tr>
-    <% _.each(user,function(user) { %>
-    <tr data-id="<%= user.id %>" data-model="user">
-      <td><%=user.first_name</td>
-      <td><%=user.middle_name</td> 
-      <td><%=user.last_name</td>
-      <td><%=user.gender</td> 
-      <td><%=user.data_of_birth</td> 
-      <td><%=user.email</td> 
-      <td><%=user.aadhar_number</td> 
-      <td><%=user.city</td>
-      <td><%=user.state</td> 
-      <td><%=user.pincode</td> 
-     
-      </tr>
-      
-    <% }); %>
-    </table>
-    </form>
+<br>
+<legend>User Detail:</legend>
+<br>
+<table class="table">
+<th>user name</th><th>gender</th><th>contact no</th>
+<tr>
+  <td><%= user.firstname+" "+user.lastname %></td>
+  <!-- if else condition to view gender -->
+    <% if(user.gender == 1){ %>
+        <td>Male</td>
+    <% }else {%>
+        <td>Female</td>
+    <% } %>
+  <!-- end of gender condition -->
+  <td><%= user.contact_no %></td>
+</table>

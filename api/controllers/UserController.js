@@ -8,24 +8,25 @@
 module.exports = {
 	'new':function(req,res){
 		// req.session.authenticated="false";
-		console.log(req.session);
 		res.view();
 	},
 
 	create:function(req,res,next){
+					console.log(JSON.stringify(req.params.all()));
 			User.create(req.params.all(),function customerCreated(err,user){
 				if (err) return next(err)
+					console.log(JSON.stringify(user))
 					res.redirect('/user/show/'+user.id);
 		});
 	},
 
 	show:function(req,res,next){
-		User.findOne(req.param('id')).populateAll().exec( function (err,user){
-			if (err) throw next(err)
+		User.findOne(req.param('id'),function showUser(err,user){
+			if(err) return next(err);
 				res.view({
-					user:user
-				});
-		});
+					user: user
+				})
+		})
 	},
 	edit: function(req,res,next){
 		User.findOne(req.param('id'), function foundUser (err,user){
@@ -55,6 +56,12 @@ module.exports = {
 					res.redirect('/profile/new/'+user.id);
 				}else
 					res.redirect('/');
+		})
+	},
+	users:function(req,res,next){
+		User.find(function(err,users){
+			if(err) return next(err)
+				res.view({users:users});
 		})
 	}
 };
