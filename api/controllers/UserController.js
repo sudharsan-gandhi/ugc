@@ -41,7 +41,7 @@ module.exports = {
 			if(err){
 				return res.redirect('/profile/edit/' +req.param('id'));
 			}
-			res.redirect('profile/show/' +req.param('id'));
+			res.redirect('user/show/' +req.param('id'));
 		});
 	},  
 	auth:function(req,res,next){
@@ -52,7 +52,7 @@ module.exports = {
 				 if(user.password==req.param('password')){
 					console.log('in');
 					req.session.authenticated=true;
-					res.redirect('/user/show/'+user.id);
+					res.redirect('/profile/new/'+user.id);
 				}else
 					res.redirect('/');
 		})

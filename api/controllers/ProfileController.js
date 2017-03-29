@@ -9,15 +9,11 @@ module.exports = {
 	'new':function(req,res){
 		req.session.authenticated="false";
 		console.log(req.session);
-		// User.findOne(req.param('owner')).exec(function foundUser(err,user){
-		// 	if(err) res.redirect('/');
-		// 	res.view({
-		// 	user:user
-		// });
-		// });
-		// testing purpose only
-		res.view({
-			profile:profile
+			User.findOne(req.param('owner')).exec(function foundUser(err,user){
+				if(err) res.redirect('/');
+				res.view({
+					user:user
+				});
 		});
 		
 	},
@@ -25,7 +21,6 @@ module.exports = {
 	create:function(req,res,next){
 			User.create(req.params.all(),function customerCreated(err,user){
 				if (err) return next(err)
-					
 				res.redirect('/profile/show'+ user.owner);
 		});
 	},
