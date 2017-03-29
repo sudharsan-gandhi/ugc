@@ -38,10 +38,17 @@ module.exports = {
   		required:true
   	},
   	contact_no:{
-  		type:'integer',
+  		type:'string',
+      numeric:true,
   		required:true,
   		unique:true
   	},
+    address:{
+      type:'string',
+      required:true,
+      maxLength:100,
+      minLength:5
+    },
   	aadhar_number:{
   		type:'string',
   		numeric:true,
@@ -66,8 +73,7 @@ module.exports = {
       required:true
     },
     admin_security_key:{
-      type:'string',
-      required:'false'
+      type:'string'
     },
     
     profiles:{
@@ -77,18 +83,18 @@ module.exports = {
     proposals:{
       collection:'proposal',
       via:'owner'
-    }
-    //beforeCreate:function(values,next){
-    // console.log('inside beforeCreate');
-     //require('bcrypt').hash(values.password,10,function passwordEncrypted(err,encryptedPassword){
-      // if (err) throw next(err);
-        //  console.log("1"+values.password);
-         // values.password = encryptedPassword;
-         // console.log("2"+values.password);
-         // next();
-    // });
+    },
+    beforeCreate:function(values,next){
+    console.log('inside beforeCreate');
+     require('bcrypt').hash(values.password,10,function passwordEncrypted(err,encryptedPassword){
+        if (err) throw next(err);
+           values.password = encryptedPassword;
+           console.log('password encrypted');
+           next();
+        });
+      }
+
+    
   }
     
-    
-};
-
+}

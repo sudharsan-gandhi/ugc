@@ -1,105 +1,60 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style type="text/css">
-	body
-	{
-		background-color: #A6ACAF;
-	}
-	</style>
-
-
-	<title>sign up</title>
-
-	<!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-</head>
-
-<body>
-<<<<<<< HEAD
-    
-<div class="container">
+<div class="row">
+<br>
+<div class="col-md-4"></div>
+<div class="col-md-4">
 <form class="form-horizontal" action="/user/create" method="POST">
- <input type="hidden" name="owner" value="<%- user.id%>" />
- 
 <fieldset>
-
 <!-- Form Name -->
 <legend>SIGN UP</legend>
 <div class="form-group">
- <label  for="first_name">First Name</label>
- <div class=" ">
-  <input type="text" name="first_name" maxlength="25" id="first_name" placeholder="Enter the first name" class="form-control">  
-</div>
+ 	<label  for="first_name">First Name</label>
+ 	<input type="text" name="firstname" maxlength="25" id="firstname" placeholder="Enter the first name" class="form-control">  
 </div>
 
 <div class="form-group">
- <label  for="middle_name">Middle Name</label>
- <div class=" ">
-  <input type="text" name="middle_name"  maxlength="25" id="middle_name"  placeholder="Enter the middle name" class="form-control">
- </div>
+ 	<label  for="middlename">Middle Name</label>
+ 	<input type="text" name="middlename"  maxlength="25" id="middlename"  placeholder="Enter the middle name" class="form-control">
  </div>
 
 <div class="form-group">
- <label  for="last_name">Last Name</label>
- <div class=" ">
-	<input type="text" name="last_name" maxlength="25" id="last_name"  placeholder="Enter the last name" class="form-control"> 
-</div>
+ 	<label  for="lastname">Last Name</label>
+	<input type="text" name="lastname" maxlength="25" id="lastname"  placeholder="Enter the last name" class="form-control"> 
 </div>
 
 
 <div class="form-group">
 	<label  for="email">Email</label>
-	<div class=" ">
 	<input type="text" name="email" maxlength="50" id="email"  placeholder="enter the email" class="form-control">  
-</div>
 </div>
 
 <div class="form-group">
 	<label  for="password">Password</label>
-	<div class=" "> 
 	<input type="password" name="password" maxlength="25" id="password"  placeholder="enter the password" class="form-control" >
-</div>
 </div>
 	
 <div class="form-group">
- <label  for="confirm_password">Confirm Password</label>
- <div class=" ">
-  <input type="password" name="cpass" maxlength="25" id="confirm_password"  placeholder="Enter the confirm password" class="form-control">
-</div>
+ 	<label  for="confirm_password">Confirm Password</label>
+    <input type="password" maxlength="25" id="confirm_password"  placeholder="Enter the confirm password" class="form-control">
 </div>
 
 <div class="form-group">
-
 	<label  for="date_of_birth">DateOfBirth</label>
-	<div class=" ">
 	<input type="date"   name="date_of_birth" id="date_of_birth"  placeholder="Enter the data of birth" class="form-control">
-</div>
 </div>
 
 <div class="form-group">	
-
 	<label  for="address">Address</label>
-	<div class=" ">
-	<textarea style="resize:none" rows="4" cols="25" required="required"/>
-</div>
+	<textarea style="resize:none" name="address" id="address" rows="4" class="form-control" required></textarea>
 </div>
 
 <div class="form-group">	
  <label  for="city">City</label>
- <div class=" ">
 	<input type="text"  name="city" maxlength="25" id="city"  placeholder="enter the city" class="form-control">
 </div>
-</div>
-
-	<option value="">------------Select State------------</option>
+<div class="form-group">
+<label for="state">State</label>
+<select class="form-control" name="state" id="state">
+	<option selected disabled="disabled">------------Select State------------</option>
 		<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
 		<option value="Andhra Pradesh">Andhra Pradesh</option>
 		<option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -136,46 +91,38 @@
 		<option value="Uttar Pradesh">Uttar Pradesh</option>
 		<option value="West Bengal">West Bengal</option>
 	</select>
-
+</div>
 <div class="form-group">
 	<label  for="pincode">Pincode</label>
-	<div class=" ">
 	<input type="text" name="pincode" maxlength="25" id="pincode"  placeholder="Enter the pincode" class="form-control">
 </div>
+<div class="form-group">
+	<label  for="gender">Gender</label>
+	<select name="gender" required class="form-control">
+		<option selected disabled>select</option>
+		<option value="1">male</option>
+		<option value="0">female</option>
+	</select>
 </div>
 <div class="form-group">
-<label  for="gender">Gender</label>
-	
-		<select name="gender" required="required">
-			<option value="1">male</option>
-			<option value="0">female</option>
-		</select>
-	
-
+	<label for="aadhar_number">Aadhar number</label>
+	<input type="text" name="aadhar_number" id="aadhar_number" class="form-control" />
+</div>
 <div class="form-group">
-	<label  for="phone_number">Phone Number</label>
-	<div class=" ">
+	<label  for="contact_no">Phone Number</label>
 	<input type="text" name="contact_no" id="contact_no"  placeholder="Enter the phone number" class="form-control">
 </div>
-</div>
-<div class="form-group">
-  <label  for="singlebutton"> </label>
-  <div class=" ">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">submit<button>
->>>>>>> a43dbb611caf9afb0294423f648645bcb08d5f41
-      <button id="singlebutton" name="singlebutton" class="btn btn-primary">Cancel</button>
+  <div class="btn-group btn-group-justified">
+  	<div class="btn-group">
+    <button id="submit" type="submit" class="btn btn-primary">submit</button>
+    </div>
+    <div class="btn-group">
+     <button id="reset" type="reset" class="btn btn-danger">reset</button>
+     </div>
   </div>
-</div>
-
-<<<<<<< HEAD
-
+  <input type="hidden" name="role" value="user"/>
 </fieldset>
-=======
-</table>
->>>>>>> a43dbb611caf9afb0294423f648645bcb08d5f41
 </form>
-
 </div>
-</body>
-
-</html>
+<div class="col-md-4"></div>
+<br>
