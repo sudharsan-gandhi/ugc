@@ -2,7 +2,7 @@
 <legend>User Detail:</legend>
 <br>
 <table class="table">
-<th>user name</th><th>gender</th><th>contact no</th>
+<th>user name</th><th>gender</th><th>contact no</th><th>email id</th><th>date of birth</th><th>address</th><th>aadhar number</th><th>city</th><th>state</th>
 <tr>
   <td><%= user.firstname+" "+user.lastname %></td>
   <!-- if else condition to view gender -->
@@ -13,4 +13,10 @@
     <% } %>
   <!-- end of gender condition -->
   <td><%= user.contact_no %></td>
-</table>
+  <td><%= user.email %></td>
+  <td><%= user.date_of_birth %></td>
+  <td><%= user.address %></td>
+  <td><%= user.aadhar_number %></td>
+  <td><%= user.city %></td>
+  <td><%= user.state %></td>
+</table>  

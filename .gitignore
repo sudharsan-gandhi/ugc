@@ -48,3 +48,4 @@ Temporary Items
 .apdisk
 .tmp
 config/models.js
+.tmp/localDiskDb.db
