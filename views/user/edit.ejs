@@ -1,0 +1,18 @@
+<form action="/user/update/<%= user.id %>" method="POST" class="form-control">
+  <input type='hidden' value='<%- user.id>'>
+  <h2>Edit your user details here</h2>
+
+  <input value="<%=user.first_name %>" name="firrst_name" type="text" class="form-control"/>
+  <input value="<%=user.last_name %>" name="last_name" type="text" class="form-control"/>
+  <input value="<%=user.middle-name %>" name="middle-name" type="text" class="form-control"/>
+  <input value="<%=user.gender %>" name="gender" type="text" class="form-control"/>
+  <input value="<%=user.date_of_birth %>" name="date_of_birth" type="text" class="form-control"/>
+  <input value="<%=user.email %>" name="email" type="text" class="form-control"/>
+  <input value="<%=user.password %>" name="password" type="text" class="form-control"/>
+  <input value="<%=user.contact-no %>" name="contact-no " type="text" class="form-control"/>
+  <input value="<%=user.aadhar_number %>" name="aadhar_number" type="text" class="form-control"/>
+  <input value="<%=user.city %>" name="city" type="text" class="form-control"/>
+  <input value="<%=user.state %>" name="state" type="text" class="form-control"/>
+  <input value="<%= user.pincode %>" name="pincode" type="text" class="form-control"/>
+  <input type="submit" value="Save" class="btn btn-lg btn-primary btn-block" />
+ </form>
