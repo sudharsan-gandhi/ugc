@@ -1,48 +1,87 @@
-<div class='container'>
-<table>
-  <tr>
-    <th>Area of Specialization</th> 
-     <th>Qualification</th> 
-      <th>Designation</th> 
-       <th>Retired or not</th> 
-         <th>College Name</th> 
-         <th>College Email</th>
-          <th>College Phone Number</th>
-          <th>Teaching Experience</th> 
-           <th>Research Experience</th> 
-            <th>Doctrate Degree</th>
-            <th>Doctrate Year</th>
-            <th> Papers Published</th>
-            <th>Papers Accepted</th> 
-            <th>Papers Communicated</th> 
-            <th>Books published</th> 
-            <th>Books Accepted</th>
-            <th>Books Communicated</th> 
-            <th>User Photo</th>
+<br>
+<legend>profile Detail:</legend>
+<br>
+<table class="table">
+<tr>
+  <th>Area of Specialization<</th>
+  <td><%= profile.Area_of_Specialization %></td>
+</tr>
+<tr>
+  <th>Qualification</th>
+  <td><%= profile.Qualification %></td>
+</tr>
+<tr>
+  <th>designation</th>
+  <td><%= profile.designation %></td>
+</tr>
+<th>retired</th>
+ <% if(user.retired == 1){ %>
+  <td>yes</td>
+  <% }else {%>
+  <td>no</td>
+  <% } %>
+</tr>
+<tr>
+  <th>College Name</th>
+  <td><%= profile.college_name %></td>
+</tr>
+<tr>
+  <th>College Email</th>
+  <td><%= profile.college_email %></td>
+</tr>
+<tr>
+  <th>College Phone Number</th>
+  <td><%= profile.college_phone_no %></td>
+</tr>
+<tr>
+  <th>Teaching Experience</th>
+  <td><%= profile.teaching_experience %></td>
+</tr>
+<tr>
+  <th>Research Experience</th>
+  <td><%= profile.research_experience %></td>
+</tr>
+<tr>
+  <th>Doctrate Degree</th>
+  <td><%= profile.doctrate_degree_title %></td>
+</tr>
+<tr>
+  <th>Doctrate Year</th>
+  <td><%= profile.doctrate_degree_year %></td>
+</tr>
 
-    </tr>
-    <% _.each(user.profiles,function(profile) { %>
-    <tr data-id="<%= profile.owner%>" data-model="user">
-      <td><%= profile.area_of_specialization</td>
-      <td><%= profile.qualification</td> 
-      <td><%= profile.designation</td>
-      <td><%=profile.college_name</td> 
-      <td><%=profile.college_email</td> 
-      <td><%=profile.college_phone_no</td> 
-      <td><%= profile.teaching_experience</td> 
-      <td><%= profile.research_experience</td>
-      <td><%= profile.doctrate_degree_year</td> 
-      <td><%= profile.doctrate_degree_title</td> 
-      <td><%= profile.retired</td>
-      <td><%=profile.papers_published</td>
-      <td><%=profile.papers_accepted</td>
-      <td><%=profile.papers_communicated</td>
-      <td><%=profile.book_published</td>
-      <td><%=profile.book_accepted</td>
-      <td><%=profile.book_communicated</td>
-      </tr>
-       <a class="btn btn-medium btn-primary" href="/profile/edit/<%= profile.owner%>">Edit</a>
-    <% }); %>
+<tr>
+  <th>Papers Published</th>
+  <td><%= profile.papers_published %></td>
+</tr>
 
-    </table>
-    </div>
+<tr>
+  <th>Papers Accepted</th>
+  <td><%= profile.papers_accepted %></td>
+</tr>
+<tr>
+  <th>Papers Communicated</th>
+  <td><%= profile.papers_communicated %></td>
+</tr>
+<tr>
+  <th></th>
+  <td><%= profile. %></td>
+</tr>
+<tr>
+  <th>Books published</th>
+  <td><%= profile.book_published %></td>
+</tr>
+<tr>
+  <th>Books Accepted</th>
+  <td><%= profile.book_accepted %></td>
+</tr>
+<tr>
+  <th>Books Communicated</th>
+  <td><%= profile.books_communicated %></td>
+</tr>
+<tr>
+ <td><a class="btn btn-medium btn-primary" href="/user/edit/<%= user.id %>">Edit</a></td>
+</tr>
+</table>
+
+

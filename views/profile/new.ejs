@@ -54,17 +54,13 @@
   <input type="text" name="college_email" maxlength="25" id="college_mail" class="form-control">
   </div>
 </div>
-
-
-
-<!-- Select Basic -->
 <div class="form-group">
-  <label  for="retired">Retired: </label>
-  
-    <input id="retired" type="radio" name="retired" value="Yes"  placeholder="Retired/Not Retired"> Yes 
-    <input id="retired" type="radio" name="retired" value="No"  placeholder="Retired/Not Retired"> No <br>
-     
- 
+  <label  for="retired">Retired</label>
+  <select name="retired" required class="form-control">
+    <option selected disabled>select</option>
+    <option value="1">Yes</option>
+    <option value="0">No</option>
+  </select>
 </div>
 <div class="form-group">
   <label  for="teaching_experience">Teaching Experience: </label>
@@ -156,6 +152,3 @@
 </form>
 
 </div>
-</body>
-
-</html>
