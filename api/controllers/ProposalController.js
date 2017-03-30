@@ -9,15 +9,15 @@ module.exports = {
 	'new':function(req,res){
 		// req.session.authenticated="false";
 		console.log(req.session);
-		User.findOne(req.param('id'), function (err,user){
+		User.findOne(req.param('id'), function (err,proposal){
 			res.view({
-				user:user
+				proposal:proposal
 			});
 		});
 	},
 
 	create:function(req,res,next){
-			User.create(req.params.all(),function customerCreated(err,user){
+			User.create(req.params.all(),function customerCreated(err,proposal){
 				if (err){
 					 return res.redirect('/proposal/new')
 					}
@@ -26,19 +26,19 @@ module.exports = {
 		});
 	},
 	show:function(req,res,next){
-		User.findOne(req.param('id')).populateAll().exec( function (err,user){
+		User.findOne(req.param('id')).populateAll().exec( function (err,proposal){
 			if (err) throw next(err)
 				res.view({
-					user:user
+				proposalr:proposal
 				});
 		});
 	},
 	edit: function(req,res,next){
 		User.findOne(req.param('id'), function foundUser (err,proposal){
 			if(err) return next(err);
-			if(!user) return next('User doesn\'t exist.');
+			
 			res.view({
-				user:user
+				proposal:proposal
 			});
 		});
 	},

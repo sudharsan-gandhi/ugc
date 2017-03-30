@@ -15,7 +15,7 @@
   <td><%= profile.designation %></td>
 </tr>
 <th>retired</th>
- <% if(user.retired == 1){ %>
+ <% if(profile.retired == 1){ %>
   <td>yes</td>
   <% }else {%>
   <td>no</td>
@@ -64,10 +64,6 @@
   <td><%= profile.papers_communicated %></td>
 </tr>
 <tr>
-  <th></th>
-  <td><%= profile. %></td>
-</tr>
-<tr>
   <th>Books published</th>
   <td><%= profile.book_published %></td>
 </tr>
@@ -80,7 +76,7 @@
   <td><%= profile.books_communicated %></td>
 </tr>
 <tr>
- <td><a class="btn btn-medium btn-primary" href="/user/edit/<%= user.id %>">Edit</a></td>
+ <td><a class="btn btn-medium btn-primary" href="/profile/edit/<%= profile.owner %>">Edit</a></td>
 </tr>
 </table>
 

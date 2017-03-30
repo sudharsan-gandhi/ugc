@@ -9,35 +9,35 @@ module.exports = {
 	'new':function(req,res){
 		// req.session.authenticated="false";
 		// console.log(req.session);
-			User.findOne(req.param('id')).exec(function foundUser(err,user){
+			User.findOne(req.param('id')).exec(function foundUser(err,profile){
 				if(err) res.redirect('/');
 				res.view({
-					user:user
+					profile:profile
 				});
 		});
 		
 	},
 
 	create:function(req,res,next){
-			User.create(req.params.all(),function customerCreated(err,user){
+			User.create(req.params.all(),function customerCreated(err,profile){
 				if (err) return next(err)
-				res.redirect('/profile/show'+ user.owner);
+				res.redirect('/profile/show'+ profile.owner);
 		});
 	},
 	show:function(req,res,next){
-		User.findOne(req.param('id'),function foundUser (err,user){
+		User.findOne(req.param('id'),function foundUser (err,profile){
 			if (err) throw next(err)
 				res.view({
-					user:user
+					profile:profile
 				});
 		});
 	},
 	edit: function(req,res,next){
-		User.findOne(req.param('id'), function foundUser (err,user){
+		User.findOne(req.param('id'), function foundUser (err,profile){
 			if(err) return next(err);
-			if(!user) return next('User doesn\'t exist.');
+			
 			res.view({
-				user:user
+				profile:profile
 			});
 		});
 	},
