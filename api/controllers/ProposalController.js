@@ -7,10 +7,12 @@
 
 module.exports = {
 	'new':function(req,res){
-		req.session.authenticated="false";
+		// req.session.authenticated="false";
 		console.log(req.session);
-		res.view({
-			user:user
+		User.findOne(req.param('id'), function (err,user){
+			res.view({
+				user:user
+			});
 		});
 	},
 

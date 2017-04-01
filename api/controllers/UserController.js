@@ -14,18 +14,25 @@ module.exports = {
 	create:function(req,res,next){
 					console.log(JSON.stringify(req.params.all()));
 			User.create(req.params.all(),function customerCreated(err,user){
-				if (err) return next(err)
-					console.log(JSON.stringify(user))
+				if(err) {
+						req.session.flash={err:err};
+						
+					}
+					if(err) res.redirect('/');
+					// console.log(JSON.stringify(user))
 					res.redirect('/user/show/'+user.id);
 		});
 	},
 
 	show:function(req,res,next){
 		User.findOne(req.param('id'),function showUser(err,user){
-			if(err) return next(err);
-				res.view({
-					user: user
-				})
+			if(err) {
+				req.session.flash={err:err};
+				res.redirect('/');
+			}
+			res.view({
+				user: user
+			})
 		})
 	},
 	edit: function(req,res,next){
@@ -53,7 +60,7 @@ module.exports = {
 				 if(user.password==req.param('password')){
 					console.log('in');
 					req.session.authenticated=true;
-					res.redirect('/profile/new/'+user.id);
+					res.redirect('/user/dashboard/'+user.id);
 				}else
 					res.redirect('/');
 		})
@@ -62,6 +69,11 @@ module.exports = {
 		User.find(function(err,users){
 			if(err) return next(err)
 				res.view({users:users});
+		})
+	},
+	dashboard:function(req,res,next){
+		User.findOne(req.param('id'),function dashboard(err,user){
+			res.view({user:user});
 		})
 	}
 };

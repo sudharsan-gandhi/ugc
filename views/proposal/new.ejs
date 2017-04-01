@@ -1,21 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Continous Monitoring System</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body>
-
 <div class="container">
-  <h2>Continous Monitoring System</h2>
-  
+<h1> Project Details</h1>
+<hr>  
   <form class="form-horizontal" action="/proposal/create" method="POST">
 
-   <input type="hidden" name="owner" value="<%-profile.owner%>" />
+   <input type="hidden" name="owner" value="<%-user.id%>" />
     <div class="form-group">
       <label for="project_title">Project Title</label>
       <input type="text" class="form-control" id="project_title">

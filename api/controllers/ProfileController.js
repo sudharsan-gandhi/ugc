@@ -7,9 +7,9 @@
 
 module.exports = {
 	'new':function(req,res){
-		req.session.authenticated="false";
-		console.log(req.session);
-			User.findOne(req.param('owner')).exec(function foundUser(err,user){
+		// req.session.authenticated="false";
+		// console.log(req.session);
+			User.findOne(req.param('id')).exec(function foundUser(err,user){
 				if(err) res.redirect('/');
 				res.view({
 					user:user
