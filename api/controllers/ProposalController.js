@@ -29,7 +29,7 @@ module.exports = {
 		User.findOne(req.param('id')).populateAll().exec( function (err,proposal){
 			if (err) throw next(err)
 				res.view({
-				proposalr:proposal
+				proposal:proposal
 				});
 		});
 	},

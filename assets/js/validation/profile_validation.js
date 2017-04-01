@@ -42,14 +42,17 @@ research_experience: {
 
 doctrate_degree_year: {
 	required: true,
-	digits: true
+	digits: true,
+	maxlength: 4
 },
 doctrate_degree_title: {
-	required: true
+	required: true,
+	digits: false
 },
 
 papers_published: {
 	required: true,
+	digits: true
 
 },
 papers_accepted: {
@@ -61,7 +64,8 @@ papers_communicated: {
 	digits: true
 },
 book_published: {
-	required: true
+	required: true,
+	digits: true
 },
 
 filebutton: {
@@ -113,7 +117,8 @@ digits: " should contain digits"
 
 doctrate_degree_year: {
 required: "This field cannot be blank!",
-digits: " should contain digits"
+digits: " should contain digits",
+maxlength: "Should be in 4 digits"
 },
 
 doctrate_degree_title: {
@@ -121,7 +126,8 @@ required: "This field cannot be blank!"
 },
 
 papers_published: {
-required: "This field cannot be blank!"
+required: "This field cannot be blank!",
+digits:"Should contain numbers"
 },
 
 papers_accepted: {
@@ -135,7 +141,8 @@ digits: " should contain digits"
 },
 
 book_published: {
-required: "This field cannot be blank!"
+required: "This field cannot be blank!",
+digits:"Should contain numbers"
 },
 
 filebutton: {
