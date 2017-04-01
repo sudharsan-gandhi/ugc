@@ -53,9 +53,12 @@ module.exports = {
 		});
 	},  
 	auth:function(req,res,next){
-		User.findOneByEmail(req.param('email')).exec(function loginUser(err,user){
+		User.findOneByEmail(req.param('email'),function loginUser(err,user){
 			if(err) return next(err)
-				console.log(user.password);
+				if(typeof user.password === undefined){
+					return next(err);	
+								}
+				// console.log(user.password);
 				 // sails.log(user.password);
 				 if(user.password==req.param('password')){
 					console.log('in');
@@ -91,9 +94,13 @@ module.exports = {
 	},
 	delete:function(req,res,next){
 		User.destroy(req.param('id')).exec(function(err){
-			if(err) throw err
+			if(err) throw next(err)
 				res.redirect('/');
 			})
+	},
+	logout:function(req,res,next){
+		req.session.authenticated=false;
+		res.redirect('/');
 	}
 };
 
