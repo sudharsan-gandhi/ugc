@@ -16,7 +16,6 @@ module.exports = {
 			User.create(req.params.all(),function customerCreated(err,user){
 				if(err) {
 						req.session.flash={err:err};
-						
 					}
 					if(err) res.redirect('/');
 					// console.log(JSON.stringify(user))
