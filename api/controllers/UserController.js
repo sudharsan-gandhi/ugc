@@ -88,6 +88,12 @@ module.exports = {
 				admin:admin
 			})
 		})
+	},
+	delete:function(req,res,next){
+		User.destroy(req.param('id')).exec(function(err){
+			if(err) throw err
+				res.redirect('/');
+			})
 	}
 };
 
