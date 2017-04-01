@@ -19,13 +19,13 @@ module.exports = {
 	},
 
 	create:function(req,res,next){
-			User.create(req.params.all(),function customerCreated(err,profile){
+			Profile.create(req.params.all(),function customerCreated(err,profile){
 				if (err) return next(err)
 				res.redirect('/profile/show'+ profile.owner);
 		});
 	},
 	show:function(req,res,next){
-		User.findOne(req.param('id'),function foundUser (err,profile){
+		Profile.findOne(req.param('id'),function foundUser (err,profile){
 			if (err) throw next(err)
 				res.view({
 					profile:profile
@@ -33,7 +33,7 @@ module.exports = {
 		});
 	},
 	edit: function(req,res,next){
-		User.findOne(req.param('id'), function foundUser (err,profile){
+		Profile.findOne(req.param('id'), function foundUser (err,profile){
 			if(err) return next(err);
 			
 			res.view({
@@ -42,7 +42,7 @@ module.exports = {
 		});
 	},
 	update: function(req,res,next){
-		User.update(req.param('id'),req.params.all(),function userUpdated (err){
+		Profile.update(req.param('id'),req.params.all(),function userUpdated (err){
 			if(err){
 				return res.redirect('/profile/edit/' +req.param('id'));
 			}
