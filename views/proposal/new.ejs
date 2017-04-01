@@ -2,36 +2,36 @@
 <div class="container">
   <h2>Proposal submission</h2>
   
-  <form class="form-horizontal" action="/proposal/create" method="POST">
+  <form class="form-horizontal" action="/proposal/create" id="proposalform" method="POST">
 
    <input type="hidden" name="owner" value="<%-user.id%>" />
     <div class="form-group">
       <label for="project_title">Project Title</label>
-      <input type="text" class="form-control" id="project_title">
+      <input type="text" class="form-control" name="project_title" id="project_title">
     </div>
     <div class="form-group">
      <label for="broad_subject">Broad Subject</label>
-      <input type="text" class="form-control" id="broad_subject">
+      <input type="text" class="form-control" name="broad_subject" id="broad_subject">
     </div>
       <div class="form-group">
      <label for="estimated_budget">Estimated Budget</label>
-      <input type="text" class="form-control" id="estimated_budget">(approx.)
+      <input type="text" class="form-control" name="estimated_budget" id="estimated_budget">(approx.)
     </div>
     <div class="form-group">
      <label for="project_duration">Project Duration</label>
-      <input type="text" class="form-control" id="project_duration">
+      <input type="text" class="form-control" name="project_duration" id="project_duration">
     </div>
     <div class="form-group">
   <label for="abstract">Abstract</label>
-  <textarea class="form-control" rows="4" id="abstract"></textarea>
+  <textarea class="form-control" rows="4" name="abstract" id="abstract"></textarea>
 </div>
 <div class="form-group">
       <label for="college_account_number">College Account Number</label>
-      <input type="text" class="form-control" id="college_account_number">
+      <input type="text" class="form-control" name="college_account_number" id="college_account_number">
     </div>
       <div class="form-group">
       <label for="undertaking_college_name">Undertaking College Name</label>
-      <input type="text" class="form-control" id="undertaking_college_nameundertaking_college_name">
+      <input type="text" class="form-control" name="undertaking_college_name" id="undertaking_college_nameundertaking_college_name">
     </div>
     College Approval Status
     <div class="radio">
@@ -42,9 +42,18 @@
 </div>
 <div class="form-group">
   <div id="browse_app">
+
   <label for="project_title">Formate to upload the proposal</label>
 <a class="btn btn-default btn-lg btn-block" href="/formate">proposal formate</a>
+
 </div>
+<!-- Button -->
+<div class="form-group">
+  <label  for="singlebutton"> </label>
+  <div class=" ">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Update</button>
+      <button id="singlebutton" name="singlebutton" class="btn btn-primary">Cancel</button>
+  </div>
 </div>
 <div class="form-group">
       <div>

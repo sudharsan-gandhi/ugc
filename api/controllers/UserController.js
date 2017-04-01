@@ -60,7 +60,13 @@ module.exports = {
 				 if(user.password==req.param('password')){
 					console.log('in');
 					req.session.authenticated=true;
-					res.redirect('/user/dashboard/'+user.id);
+					if(user.role==='user'){
+						res.redirect('/user/dashboard/'+user.id);
+					}else if (user.role==='admin') {
+						res.redirect('/user/admin/'+user.id);
+					}else{
+						res.redirect('/');
+					}
 				}else
 					res.redirect('/');
 		})
@@ -75,6 +81,19 @@ module.exports = {
 		User.findOne(req.param('id'),function dashboard(err,user){
 			res.view({user:user});
 		})
+	},
+	admin:function(req,res,next){
+		User.findOne(req.param('id'),function adminDashboard(err,admin){
+			res.view({
+				admin:admin
+			})
+		})
+	},
+	delete:function(req,res,next){
+		User.destroy(req.param('id')).exec(function(err){
+			if(err) throw err
+				res.redirect('/');
+			})
 	}
 };
 
