@@ -1,4 +1,4 @@
-$("#proposal").validate({
+$("#proposalform").validate({
 //specify the validation rules
 rules: {
 project_title: {
