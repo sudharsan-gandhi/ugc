@@ -2,7 +2,7 @@
 <div class="container">
   <h2>Proposal submission</h2>
   
-  <form class="form-horizontal" action="/proposal/create" method="POST">
+  <form class="form-horizontal" action="/proposal/create" id="proposal" method="POST">
 
    <input type="hidden" name="owner" value="<%-user.id%>" />
     <div class="form-group">
@@ -42,9 +42,16 @@
 </div>
 <div class="form-group">
   <div id="browse_app">
-  <label for="project_title">Formate to upload the proposal</label>
+  <label for="project_title">Format to upload the proposal</label>
 <a class="btn btn-default btn-lg btn-block" href="/views/formate.ejs">proposal formate</a>
 </div>
+<!-- Button -->
+<div class="form-group">
+  <label  for="singlebutton"> </label>
+  <div class=" ">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Update</button>
+      <button id="singlebutton" name="singlebutton" class="btn btn-primary">Cancel</button>
+  </div>
 </div>
   </form>
 </div>
