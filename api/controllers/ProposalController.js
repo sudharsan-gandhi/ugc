@@ -9,9 +9,9 @@ module.exports = {
 	'new':function(req,res){
 		// req.session.authenticated="false";
 		console.log(req.session);
-		User.findOne(req.param('id'), function (err,user){
+		User.findOne(req.param('id'), function (err,proposal){
 			res.view({
-				user:user
+				proposal:proposal
 			});
 		});
 	},
@@ -44,8 +44,9 @@ module.exports = {
 	edit: function(req,res,next){
 		User.findOne(req.param('id'), function foundUser (err,proposal){
 			if(err) return next(err);
+
 			res.view({
-				user:user
+				proposal:proposal
 			});
 		});
 	},
