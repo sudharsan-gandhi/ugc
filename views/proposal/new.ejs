@@ -2,9 +2,9 @@
 <div class="container">
   <h2>Proposal submission</h2>
   
-  <form class="form-horizontal" action="/proposal/create" id="proposalform" method="POST">
+  <form class="form-horizontal" action="/proposal/create" id="proposalform" enctype="multipart/form-data" method="POST">
 
-   <input type="hidden" name="owner" value="<%-user.id%>" />
+   <input type="hidden" name="owner" value="<%=user.id%>" />
     <div class="form-group">
       <label for="project_title">Project Title</label>
       <input type="text" class="form-control" name="project_title" id="project_title">
@@ -31,26 +31,33 @@
     </div>
       <div class="form-group">
       <label for="undertaking_college_name">Undertaking College Name</label>
-      <input type="text" class="form-control" name="undertaking_college_name" id="undertaking_college_nameundertaking_college_name">
+      <input type="text" class="form-control" name="undertaking_college_name" id="undertaking_college_name">
     </div>
     College Approval Status
     <div class="radio">
-  <label><input type="radio" name="college_approval_status" id="college_approval_status">Yes</label>
+  <label><input type="radio" name="college_approval_status" id="college_approval_status" value="true">Yes</label>
 </div>
 <div class="radio">
-  <label><input type="radio" name="college_approval_status" id="college_approval_status">No</label>
+  <label><input type="radio" name="college_approval_status" id="college_approval_status" value="false">No</label>
+</div>
+<div>
+  <div class="form-group">
+    <label for="file_upload">
+      <input type="file" id="file_upload" name="file_upload" class="form-control"/>
+    </label>
+  </div>
 </div>
 <div class="form-group">
   <div id="browse_app">
   <label for="project_title">Format to upload the proposal</label>
-<a class="btn btn-default btn-lg btn-block" href="/views/formate.ejs">proposal formate</a>
+<a class="btn btn-default btn-lg btn-block" href="/formate">proposal formate</a>
 </div>
 <!-- Button -->
 <div class="form-group">
   <label  for="singlebutton"> </label>
   <div class=" ">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Update</button>
-      <button id="singlebutton" name="singlebutton" class="btn btn-primary">Cancel</button>
+    <button class="btn btn-primary">Update</button>
+      <button class="btn btn-primary">Cancel</button>
   </div>
 </div>
   </form>

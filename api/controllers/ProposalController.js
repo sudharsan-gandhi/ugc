@@ -17,17 +17,28 @@ module.exports = {
 	},
 
 	create:function(req,res,next){
-			User.create(req.params.all(),function customerCreated(err,user){
-				if (err){
-					 return res.redirect('/proposal/new')
-					}
-					res.redirect('/proposal/show/'+user.id);
-				
-		});
+		req.file('file_upload').upload({dirname:'/images/'},function(err,files){
+			console.log(files);
+			if(err){
+				res.redirect('/');
+			}
+			var filepath=files[0].fd;
+			console.log("filepath"+filepath);
+			Proposal.create(req.params.all(),function customerCreated(err,proposal){
+				if (err) return next(err);
+				console.log('going to update file')
+					Proposal.update({owner:proposal.id},{fd:filepath}).exec(function fileAdded(err,proposal){
+						if(err) return next(err);
+						console.log('updated with out error');
+						res.redirect('/proposal/show/'+proposal.id);
+					})
+									
+				});
+		})
 	},
 	show:function(req,res,next){
 		User.findOne(req.param('id')).populateAll().exec( function (err,user){
-			if (err) throw next(err)
+			if (err) return next(err)
 				res.view({
 					user:user
 				});
@@ -36,7 +47,6 @@ module.exports = {
 	edit: function(req,res,next){
 		User.findOne(req.param('id'), function foundUser (err,proposal){
 			if(err) return next(err);
-			if(!user) return next('User doesn\'t exist.');
 			res.view({
 				user:user
 			});
