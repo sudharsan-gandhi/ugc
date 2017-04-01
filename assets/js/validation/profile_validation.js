@@ -1,5 +1,5 @@
 $("#profile").validate({
-//specify the validation rules
+// rules specification for profile
 rules: {
 area_of_specialization: {
 	required: true
