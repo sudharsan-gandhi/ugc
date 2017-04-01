@@ -84,6 +84,14 @@ module.exports = {
       collection:'proposal',
       via:'owner'
     },
+    updates:{
+      collection:'update',
+      via:'owner'
+    },
+    notifications:{
+      collection:'notification',
+      via:'owner'
+    },
     beforeCreate:function(values,next){
     console.log('inside beforeCreate');
      require('bcrypt').hash(values.password,10,function passwordEncrypted(err,encryptedPassword){
