@@ -4,7 +4,7 @@
   
   <form class="form-horizontal" action="/proposal/create" id="proposalform" method="POST">
 
-   <input type="hidden" name="owner" value="<%-user.id%>" />
+   <input type="hidden" name="owner" value="<%=proposal.owner%>" />
     <div class="form-group">
       <label for="project_title">Project Title</label>
       <input type="text" class="form-control" name="project_title" id="project_title">
@@ -42,29 +42,15 @@
 </div>
 <div class="form-group">
   <div id="browse_app">
-
   <label for="project_title">Formate to upload the proposal</label>
 <a class="btn btn-default btn-lg btn-block" href="/formate">proposal formate</a>
-
 </div>
-<!-- Button -->
 <div class="form-group">
   <label  for="singlebutton"> </label>
   <div class=" ">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Update</button>
-      <button id="singlebutton" name="singlebutton" class="btn btn-primary">Cancel</button>
+    <button name="singlebutton" class="btn btn-primary" type="submit">submit</button>
+      <button name="singlebutton" class="btn btn-primary" type="reset">Cancel</button>
   </div>
 </div>
-<div class="form-group">
-      <div>
-       <button class="btn btn-primary " name="submit" type="submit">Submit</button>
-      </div>
-      <div class="form-group">
-      <div>
-       <button class="btn btn-primary " name="Cancel" type="Reset">Cancel</button>
-      </div>
-
   </form>
 </div>
-
-
