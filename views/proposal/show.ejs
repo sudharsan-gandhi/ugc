@@ -1,29 +1,39 @@
 <div class='container'>
 <table>
   <tr>
-    <th>Project Title</th> 
-     <th>Broad Subject</th> 
-      <th>Estimated Budget</th> 
-       <th>Abstract</th>
-       <th>Projec Durationt</th> 
-         <th>College Account Number</th> 
-         <th>Undertaking College Name</th>
-          <th>College Approval Status</th>
-          
+    <th>Project Title</th>
+     <td><%= proposal.project_title</td>
   </tr>
-  <% _.each(user.proposals,function(proposal) { %>
-    <tr data-id="<%= proposal.owner%>" data-model="user">
-      <td><%= proposal.project_title</td>
+  <tr>
+     <th>Broad Subject</th>
       <td><%= proposal.broad_subject</td> 
+  </tr>
+   <tr>
+      <th>Estimated Budget</th>
       <td><%= proposal.estimated_budget</td>
-      <td><%=proposal.abstract</td> 
-      <td><%=proposal.project_duration</td> 
-      <td><%=proposal.college_account_number</td> 
+   </tr>
+   <tr> 
+       <th>Abstract</th>
+       <td><%=proposal.abstract</td> 
+    </tr>
+    <tr>
+       <th>Projec Durationt</th>
+       <td><%=proposal.project_duration</td> 
+    </tr> 
+    <tr>
+         <th>College Account Number</th>
+         <td><%=proposal.college_account_number</td> 
+    </tr>
+    <tr> 
+         <th>Undertaking College Name</th>
+         <td><%= proposal.undertaking_college_name</td> 
+  </tr>
+   <tr>
+       <th>College Approval Status</th>
       <td><%= proposal.college_approval_status</td> 
-      <td><%= proposal.undertaking_college_name</td> 
   </tr>
   <a class="btn btn-medium btn-primary" href="/proposal/edit/<%= proposal.owner%>">Edit Proposal</a>
-    <% }); %>
+  
 
     </table>
     </div>
