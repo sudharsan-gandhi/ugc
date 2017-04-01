@@ -2,36 +2,39 @@
 <table>
   <tr>
     <th>Project Title</th>
-     <td><%= proposal.project_title</td>
+     <td><%= proposal.project_title %></td>
   </tr>
   <tr>
      <th>Broad Subject</th>
-      <td><%= proposal.broad_subject</td> 
+      <td><%= proposal.broad_subject %></td> 
   </tr>
    <tr>
       <th>Estimated Budget</th>
-      <td><%= proposal.estimated_budget</td>
+      <td><%= proposal.estimated_budget %></td>
    </tr>
    <tr> 
        <th>Abstract</th>
-       <td><%=proposal.abstract</td> 
+       <td><%=proposal.abstract%></td> 
     </tr>
     <tr>
        <th>Projec Durationt</th>
-       <td><%=proposal.project_duration</td> 
+       <td><%=proposal.project_duration %></td> 
     </tr> 
     <tr>
          <th>College Account Number</th>
-         <td><%=proposal.college_account_number</td> 
+         <td><%=proposal.college_account_number %></td> 
     </tr>
     <tr> 
          <th>Undertaking College Name</th>
-         <td><%= proposal.undertaking_college_name</td> 
+         <td><%= proposal.undertaking_college_name%></td> 
   </tr>
    <tr>
        <th>College Approval Status</th>
-      <td><%= proposal.college_approval_status</td> 
+      <td><%= proposal.college_approval_status%></td> 
   </tr>
+  <tr>
+    <th>Download file</th>
+    <td><a href="<%= proposal.fd %>" download><%= proposal.project_title %></a>
   <a class="btn btn-medium btn-primary" href="/proposal/edit/<%= proposal.owner%>">Edit Proposal</a>
   
 

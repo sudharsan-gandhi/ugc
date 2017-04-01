@@ -17,30 +17,27 @@ module.exports = {
 	},
 
 	create:function(req,res,next){
-		req.file('file_upload').upload({dirname:'/images/'},function(err,files){
-			console.log(files);
+		req.file('file_upload').upload({dirname:'F:/Projects/sails project/ugc/assets/uploads'},function(err,files){
 			if(err){
 				res.redirect('/');
 			}
 			var filepath=files[0].fd;
-			console.log("filepath"+filepath);
 			Proposal.create(req.params.all(),function customerCreated(err,proposal){
 				if (err) return next(err);
-				console.log('going to update file')
-					Proposal.update({owner:proposal.id},{fd:filepath}).exec(function fileAdded(err,proposal){
+					Proposal.update(proposal.id,{fd:filepath}).exec(function fileAdded(err,proposal){
 						if(err) return next(err);
-						console.log('updated with out error');
-						res.redirect('/proposal/show/'+proposal.id);
+						res.redirect('/proposal/show/'+proposal[0].id);
 					})
 									
 				});
 		})
 	},
 	show:function(req,res,next){
-		User.findOne(req.param('id')).populateAll().exec( function (err,user){
+		Proposal.findOne(req.param('id'), function showProposal(err,proposal){
 			if (err) return next(err)
+				console.log(proposal);
 				res.view({
-					user:user
+					proposal:proposal
 				});
 		});
 	},
@@ -59,6 +56,18 @@ module.exports = {
 			}
 			res.redirect('proposal/show/' +req.param('id'));
 		});
+	},
+	document:function(req,res,next){
+		Proposal.findOne(req.param('id'),function document(err,document){
+			var skipperdisk=require('skipper-disk');
+			var fileAdapter=skipperdisk();
+			res.set("Content-disposition", "attachment; filename='download.pdf'");
+			fileAdapter.read(document.fd)
+    			.on('error', function (err){
+     		return res.serverError(err);
+    		})
+    	.pipe(res);
+		})
 	}  
 
 };
