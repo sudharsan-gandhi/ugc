@@ -28,12 +28,10 @@ module.exports = {
 		},
 		project_title: {
 			type: 'string',
-			numeric: true,
 			required: true
 		},
 		abstract: {
 			type: 'string',
-			numeric: true,
 			required: true
 		},
 		project_duration: {
@@ -49,6 +47,9 @@ module.exports = {
 		owner:{
 			model:'user',
 			required:true
+		},
+		fd:{
+			type:'string'
 		}
 
   }
