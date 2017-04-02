@@ -28,11 +28,8 @@ module.exports = {
 	proposal_id:{
 		model:'proposal',
 		required:true
-	 },
-	last_update:{
-		type:'datetime',
-		required:'true'
-	}
+	 }
+	
 
   }
 };
