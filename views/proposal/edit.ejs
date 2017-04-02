@@ -1,7 +1,7 @@
 <h2>Edit your proposal details here</h2>
 <hr>
 <form action="/proposal/update/<%= proposal.owner%>" method="POST" id="proposal_details" class="form-control">
-   <input type='hidden' >
+   <input type='hidden' value="<%=proposal.id%>">
   
 <div class="form-group">
   <label for="project_title">Project Title</label>
@@ -34,10 +34,10 @@
  <div class="form-group">
   <label for="college_approval_status">College Approval Status</label>
     <div class="radio">
-  <label><input type="radio" name="college_approval_status" id="college_approval_status">Yes</label>
+  <label><input type="radio" name="college_approval_status" id="college_approval_status" value="true">Yes</label>
 </div>
 <div class="radio">
-  <label><input type="radio" name="college_approval_status" id="college_approval_status">No</label>
+  <label><input type="radio" name="college_approval_status" id="college_approval_status" value="false">No</label>
   <input value="<%=proposal.college_approval_status %>" name=" college_approval_status" type="text" class="form-control"/>
   </div>
   </div>

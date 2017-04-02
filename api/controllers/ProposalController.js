@@ -11,32 +11,32 @@ module.exports = {
 		console.log(req.session);
 		User.findOne(req.param('id'), function (err,proposal){
 			res.view({
-				proposal:proposal
+		 		proposal:proposal
 			});
 		});
 	},
 
 	create:function(req,res,next){
-			User.create(req.params.all(),function customerCreated(err,proposal){
-				if (err){
-					 return res.redirect('/proposal/new')
-					}
+			Proposal.create(req.params.all(),function customerCreated(err,proposal){
+				if (err) return next(err)					
 					var options={
 						priority:1,
 						sender_id:proposal.owner,
 						message:"proposal provided "+proposal.project_title,
 						link:"/proposal/show/"+proposal.id,
-						proposal_id:proposal.id
+						proposal_id:proposal.id,
+						receiver_id:9
 					};
-				var check=NotificationController.addNotification(options);
-					if(check)
+				var check=sails.controllers.notification.addNotification(options);
+					if(check){
 						res.redirect('/proposal/show/'+user.id);
+					}
 					else res.redirect('/');
 				
 		});
 	},
 	show:function(req,res,next){
-		User.findOne(req.param('id')).populateAll().exec( function (err,proposal){
+		Proposal.findOne(req.param('id')).populateAll().exec( function (err,proposal){
 			if (err) throw next(err)
 				res.view({
 				proposal:proposal
@@ -44,7 +44,7 @@ module.exports = {
 		});
 	},
 	edit: function(req,res,next){
-		User.findOne(req.param('id'), function foundUser (err,proposal){
+		Proposal.findOne(req.param('id'), function foundUser (err,proposal){
 			if(err) return next(err);
 			
 			res.view({
@@ -53,11 +53,27 @@ module.exports = {
 		});
 	},
 	update: function(req,res,next){
-		User.update(req.param('id'),req.params.all(),function userUpdated (err){
+		var id=req.param('id');
+		Proposal.update(id,req.params.all(),function userUpdated (err){
 			if(err){
-				return res.redirect('/proposal/edit/' +req.param('id'));
+				return next(err);
 			}
-			res.redirect('proposal/show/' +req.param('id'));
+			Proposal.findOne(id,function getProposal(err,proposal){
+				var options={
+						priority:1,
+						sender_id:proposal.owner,
+						message:"proposal updated by user "+proposal.project_title,
+						link:"/proposal/show/"+proposal.id,
+						proposal_id:proposal.id,
+						receiver_id:9
+					};
+				var check=sails.controllers.notification.addNotification(options);
+					if(check){
+						res.redirect('/proposal/show/'+proposal.id);
+					}
+					else res.redirect('/');
+				})
+			
 		});
 	}  
 
