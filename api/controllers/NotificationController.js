@@ -26,10 +26,10 @@ module.exports = {
 		});
 	},
 	show:function(req,res,next){
-		User.findOne(req.param('id')).populateAll().exec( function (err,user){
+		Notification.find({receiver_id:req.param('id')}, function (err,notifications){
 			if (err) throw next(err)
 				res.view({
-					user:notification
+					notifications:notifications
 				});
 		});
 	},
@@ -49,9 +49,12 @@ module.exports = {
 			res.redirect('notification/show/' +req.param('id'));
 		});
 	},
-	addNotification:function(values){
-		Notification.create(values,function notificationAdded(err,notication){
-			if (err) return false;
+	addNotification:function(values,next){
+		console.log('values'+JSON.stringify(values));
+		Notification.create(values,function notificationAdded(err,notification){
+			console.log('err'+JSON.stringify(err));
+			console.log('notification'+JSON.stringify(notification));
+			if (err) return next(err);
 				return true;
 		})
 		

@@ -19,8 +19,7 @@ module.exports = {
   		required:true
   	},
   	receiver_id:{
-  		type:'integer',
-  		required:true
+  		type:'integer'
   	},
   	link:{
   		type:'string',
