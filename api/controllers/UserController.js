@@ -19,7 +19,10 @@ module.exports = {
 					}
 					if(err) res.redirect('/');
 					// console.log(JSON.stringify(user))
-					res.redirect('/user/show/'+user.id);
+					if(user.role==='user')
+						res.redirect('/user/dashboard/'+user.id);
+					else
+						res.redirect('/user/adminDashboard/'+user.id);
 		});
 	},
 
@@ -59,8 +62,10 @@ module.exports = {
 								}
 				// console.log(user.password);
 				 // sails.log(user.password);
-				 if(user.password==req.param('password')){
-					console.log('in');
+				 // if(user.password==req.param('password')){
+				 	require('bcrypt').compare(req.param('password'),user.password,function(err,valid){
+				 		console.log(JSON.stringify(valid));
+				 	})
 					req.session.authenticated=true;
 					if(user.role==='user'){
 						res.redirect('/user/dashboard/'+user.id);
@@ -69,8 +74,6 @@ module.exports = {
 					}else{
 						res.redirect('/');
 					}
-				}else
-					res.redirect('/');
 		})
 	},
 	users:function(req,res,next){

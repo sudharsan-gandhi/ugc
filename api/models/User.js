@@ -90,8 +90,9 @@ module.exports = {
     },
     notifications:{
       collection:'notification',
-      via:'owner'
-    },
+      via:'sender_id'
+    }
+  },
     beforeCreate:function(values,next){
     console.log('inside beforeCreate');
      require('bcrypt').hash(values.password,10,function passwordEncrypted(err,encryptedPassword){
@@ -101,8 +102,5 @@ module.exports = {
            next();
         });
       }
-
-    
-  }
     
 }

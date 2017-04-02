@@ -48,6 +48,13 @@ module.exports = {
 			}
 			res.redirect('notification/show/' +req.param('id'));
 		});
+	},
+	addNotification:function(values){
+		Notification.create(values,function notificationAdded(err,notication){
+			if (err) return false;
+				return true;
+		})
+		
 	}  
 
 	

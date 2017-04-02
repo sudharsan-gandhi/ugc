@@ -14,10 +14,6 @@ module.exports = {
   		min:1,
   		max:5
   	},
-  	sender_id: {
-  		type:'integer',
-  		required:true
-  	},
   	message: {
   		type: 'string',
   		required:true
@@ -30,10 +26,12 @@ module.exports = {
   		type:'string',
   		
   	},
-  	owner:{
-			model:'user',
-			required:true
-		}
+  	proposal_id:{
+      model:'proposal'
+		},
+    sender_id: {
+      model:'user'
+    }
 
 
 

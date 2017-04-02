@@ -21,7 +21,17 @@ module.exports = {
 				if (err){
 					 return res.redirect('/proposal/new')
 					}
-					res.redirect('/proposal/show/'+user.id);
+					var options={
+						priority:1,
+						sender_id:proposal.owner,
+						message:"proposal provided "+proposal.project_title,
+						link:"/proposal/show/"+proposal.id,
+						proposal_id:proposal.id
+					};
+				var check=NotificationController.addNotification(options);
+					if(check)
+						res.redirect('/proposal/show/'+user.id);
+					else res.redirect('/');
 				
 		});
 	},

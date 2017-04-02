@@ -50,6 +50,10 @@ module.exports = {
 		},
 		fd:{
 			type:'string'
+		},
+		notifications:{
+			collection:'notification',
+			via:'proposal_id'
 		}
 
   }
