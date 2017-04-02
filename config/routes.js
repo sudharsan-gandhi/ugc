@@ -37,6 +37,9 @@ module.exports.routes = {
   },
   '/formate':{
     view:'formate'
+  },
+  '/format' :{
+    view:'format'
   }
 
   /***************************************************************************

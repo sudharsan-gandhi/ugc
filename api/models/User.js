@@ -91,6 +91,10 @@ module.exports = {
     notifications:{
       collection:'notification',
       via:'sender_id'
+    },
+    status:{
+      collection:'status',
+      via:'approver_id'
     }
   },
     beforeCreate:function(values,next){
