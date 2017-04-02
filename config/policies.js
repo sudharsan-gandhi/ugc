@@ -38,6 +38,42 @@ module.exports.policies = {
   'auth':true,
   '*':true
   },
+  profile: {
+  'new': 'sessionAuth',
+  'create':'sessionAuth',
+  'show':'adminNoParam',
+  'edit':'sessionAuth',
+  'update':'sessionAuth',
+    '*':true
+    },
+      update:{
+    'new':"userAuth",
+    'create':'userAuth',
+    'show':'adminNoParam',
+    'edit':'userAuth',
+    'update':'userAuth',
+    '*':true
+    },
+      proposal:{
+    'new':"userAuth",
+    'create':'userAuth',
+    'show':'adminNoParam',
+    'edit':'userAuth',
+    'update':'userAuth',
+    '*':true
+    },
+      notification:{
+    'new':"sessionAuth",
+    'create':'sessionAuth',
+    'show':'adminNoParam',
+    'addnotification':'sessionAuth',
+    '*':true
+    },
+     email :{
+    'send':'sessionAuth',
+    'show':'sessionAuth',
+    '*':true
+    },
   '*':true
 
   /***************************************************************************
