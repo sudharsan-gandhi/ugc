@@ -27,8 +27,10 @@ module.exports = {
 	show:function(req,res,next){
 		Status.findOne(req.param('id'),function foundUser (err,status){
 			if (err) throw next(err)
+				Proposal.findOne(status.proposal_id),foundUser (err,proposal)
 				res.view({
-					status:status
+					status:status,
+					proposal:proposal
 				});
 		});
 	},
