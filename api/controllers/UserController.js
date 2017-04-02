@@ -65,15 +65,19 @@ module.exports = {
 				 // if(user.password==req.param('password')){
 				 	require('bcrypt').compare(req.param('password'),user.password,function(err,valid){
 				 		console.log(JSON.stringify(valid));
+				 		req.session.authenticated=true;
+				 		req.session.role=user.role;
+				 		req.session.user_id=user.id;
+				 		console.log(JSON.stringify(req.session));
+						if(user.role==='user'){
+							res.redirect('/user/dashboard/'+user.id);
+						}else if (user.role==='admin') {
+							res.redirect('/user/admin/'+user.id);
+						}else{
+							res.redirect('/');
+						}
 				 	})
-					req.session.authenticated=true;
-					if(user.role==='user'){
-						res.redirect('/user/dashboard/'+user.id);
-					}else if (user.role==='admin') {
-						res.redirect('/user/admin/'+user.id);
-					}else{
-						res.redirect('/');
-					}
+					
 		})
 	},
 	users:function(req,res,next){
@@ -102,6 +106,7 @@ module.exports = {
 	},
 	logout:function(req,res,next){
 		req.session.authenticated=false;
+		req.session.role=false;
 		res.redirect('/');
 	}
 };
