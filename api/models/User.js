@@ -76,7 +76,7 @@ module.exports = {
       type:'string'
     },
     
-    profiles:{
+    profile:{
       collection:'profile',
       via:'owner'
     },

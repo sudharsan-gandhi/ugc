@@ -4,7 +4,7 @@
   
   <form class="form-horizontal" action="/proposal/create" id="proposalform" enctype="multipart/form-data" method="POST">
 
-   <input type="hidden" name="owner" value="<%=proposal.owner%>" />
+   <input type="hidden" name="owner" value="<%=proposal.id%>" />
     <div class="form-group">
       <label for="project_title">Project Title</label>
       <input type="text" class="form-control" name="project_title" id="project_title">

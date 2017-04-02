@@ -12,7 +12,7 @@ module.exports = {
 	},
 
 	create:function(req,res,next){
-					console.log(JSON.stringify(req.params.all()));
+			console.log(JSON.stringify(req.params.all()));
 			User.create(req.params.all(),function customerCreated(err,user){
 				if(err) {
 						req.session.flash={err:err};

@@ -12,7 +12,7 @@ module.exports = {
 			type: 'string',
 			required: true
 		},
-		area_of_specialization:{
+		area_of_specialization: {
 			type:'string',
 			required:true
 		},
@@ -27,7 +27,6 @@ module.exports = {
         },
        college_phone_no:{
     	type:'string',
-    	numeric:true,
     	required: true
     
         },

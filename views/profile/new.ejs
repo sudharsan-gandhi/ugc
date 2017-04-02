@@ -1,6 +1,6 @@
 <div class="container">
 <form class="form-horizontal" action="/profile/create" id="profile" method="POST">
- <input type="hidden" name="owner" value="<%=profile.owner %>" />
+ 
 
 <fieldset>
 
@@ -41,7 +41,7 @@
 <div class="form-group">
   <label class="college-phone-number">College phone number:</label>
   <div class=" ">
-  <input type="text" name="college_phone_number" id="college_phone_no" class="form-control" >
+  <input type="text" name="college_phone_no" id="college_phone_no" class="form-control" >
  </div>
 </div>
 
@@ -55,8 +55,8 @@
   <label  for="retired">Retired</label>
   <select name="retired" required class="form-control">
     <option selected disabled>select</option>
-    <option value="1">Yes</option>
-    <option value="0">No</option>
+    <option value="true">Yes</option>
+    <option value="false">No</option>
   </select>
 </div>
 <div class="form-group">
@@ -143,7 +143,7 @@
       <button name="singlebutton" class="btn btn-primary">Cancel</button>
   </div>
 </div>
-
+<input type="hidden" name="owner" value="<%=profile.id %>"/>
 
 </fieldset>
 </form>

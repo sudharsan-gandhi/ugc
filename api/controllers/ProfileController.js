@@ -21,19 +21,21 @@ module.exports = {
 	create:function(req,res,next){
 			Profile.create(req.params.all(),function customerCreated(err,profile){
 				if (err) return next(err)
-				res.redirect('/profile/show'+ profile.owner);
+				res.redirect('/profile/show/'+ profile.owner);
 		});
 	},
 	show:function(req,res,next){
-		Profile.findOne(req.param('id'),function foundUser (err,profile){
+		console.log("showing"+req.param('id'));
+		Profile.find({owner:req.param('id')},function foundUser (err,profile){
+			console.log("profile")
 			if (err) throw next(err)
 				res.view({
-					profile:profile
+					profile:profile[0]
 				});
 		});
 	},
 	edit: function(req,res,next){
-		Profile.findOne(req.param('id'), function foundUser (err,profile){
+		Profile.findOne({owner:req.param('id')}, function foundUser (err,profile){
 			if(err) return next(err);
 			
 			res.view({

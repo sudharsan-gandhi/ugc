@@ -27,51 +27,51 @@ module.exports.policies = {
   ***************************************************************************/
   // '*':true
   user:{
-  'create':'sessionAuth',
-  'show':'sessionAuth',
-  'edit':'sessionAuth',
-  'update':'sessionAuth',
+  'create':true,
+  'show':'noParam',
+  'edit':'noParam',
+  'update':'noParam',
   'users':'adminNoParam',
-  'dashboard':'userAuth',
+  'dashboard':'noParam',
   'admin':'adminAuth',
-  'delete':'sessionAuth',
+  'delete':'noParam',
   'auth':true,
   '*':true
   },
   profile: {
-  'new': 'sessionAuth',
-  'create':'sessionAuth',
-  'show':'adminNoParam',
-  'edit':'sessionAuth',
-  'update':'sessionAuth',
+  'new': 'noParam',
+  'create':'noParam',
+  'show':'noParam',
+  'edit':'noParam',
+  'update':'noParam',
     '*':true
     },
       update:{
-    'new':"userAuth",
-    'create':'userAuth',
-    'show':'adminNoParam',
-    'edit':'userAuth',
-    'update':'userAuth',
+    'new':"noParam",
+    'create':'noParam',
+    'show':'noParam',
+    'edit':'noParam',
+    'update':'noParam',
     '*':true
     },
       proposal:{
-    'new':"userAuth",
-    'create':'userAuth',
-    'show':'adminNoParam',
-    'edit':'userAuth',
-    'update':'userAuth',
+    'new':"noParam",
+    'create':'noParam',
+    'show':'noParam',
+    'edit':'noParam',
+    'update':'noParam',
     '*':true
     },
       notification:{
-    'new':"sessionAuth",
-    'create':'sessionAuth',
-    'show':'adminNoParam',
-    'addnotification':'sessionAuth',
+    'new':"noParam",
+    'create':'noParam',
+    'show':'noParam',
+    'addnotification':'noParam',
     '*':true
     },
      email :{
-    'send':'sessionAuth',
-    'show':'sessionAuth',
+    'send':'noParam',
+    'show':'noParam',
     '*':true
     },
   '*':true
