@@ -31,7 +31,7 @@ module.exports.policies = {
   'show':'sessionAuth',
   'edit':'sessionAuth',
   'update':'sessionAuth',
-  'users':'adminAuth',
+  'users':'adminNoParam',
   'dashboard':'userAuth',
   'admin':'adminAuth',
   'delete':'sessionAuth',

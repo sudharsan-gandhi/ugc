@@ -26,7 +26,8 @@ module.exports = {
     	    required:true
         },
        college_phone_no:{
-    	type:'integer',
+    	type:'string',
+    	numeric:true,
     	required: true
     
         },
